@@ -82,6 +82,11 @@ $ ./Automove-log.sh  [optional argument: path to record rosbag]
 $ cd ~/TC2017/E2E/Cyclops
 $ ./Cyclops-log.sh  [optional argument: path to record rosbag]
 ```
+## Videos
+
+[End-to-End and Autoware switching](https://youtu.be/i5KQHxArOFk)
+
+[Tsukuba Challenge 2017 finals](https://youtu.be/44D_8pGVjYY)
 
 ## Sample Data
 
