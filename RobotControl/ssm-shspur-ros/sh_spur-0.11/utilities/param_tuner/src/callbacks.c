@@ -1,0 +1,707 @@
+#ifdef HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
+#include <gtk/gtk.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+/*low level I/O*/
+#include <fcntl.h>
+#include <unistd.h>
+#include <strings.h>
+#include <sys/time.h>
+#include <time.h>
+
+
+/*high level I/O*/
+#include <stdio.h>
+#include <math.h>
+
+#include <ssm_common.h>
+
+#include "callbacks.h"
+#include "interface.h"
+#include "support.h"
+
+/*ボディパラメータ*/
+#include <sh_vel_parameters.h>
+#include <SHSpur.h>
+#include <sensor/PWS_Motor.h>
+
+/*sh_spur用*/
+#include "include/param.h"
+#include "include/draw.h"
+#include "include/sh_spur.h"
+
+#define SECOND 1000000.0
+
+#define CONNECTED 1
+#define MOTOR_PARAMETER 2
+#define SERVO_PARAMETER 4
+#define BODY_PARAMETER 8
+
+#define LOG_SIZE 500
+
+void set_spinbutton_value(GtkButton *button, char *name, double value);
+void parameter_load(GtkButton *button);
+int parameter_save(char *name);
+GdkGC* set_color(GdkGC* gc, int r,int g,int b);
+
+int g_option;
+int g_state;
+int g_count;
+
+int cnt1_log[LOG_SIZE];
+int cnt2_log[LOG_SIZE];
+int pwm1_log[LOG_SIZE];
+int pwm2_log[LOG_SIZE];
+int cnt_wp;
+Odometry odm_log[LOG_SIZE];
+int odm_wp;
+
+double g_ref_speed;
+double g_P[PARAM_NUM];
+
+SSM_sid g_odm_bs_sid, g_motor_sid;
+int g_ssm_enable;
+int g_motor_tid;
+
+
+/*------------------------------------------------*/
+void initialize(void){
+  g_option = 0;  
+  PWSMotor motor;
+  double time;
+
+  //  arg_analyse(argc,argv);
+  
+  if(!initSSM()){
+    /*SSMが起動していない*/
+    printf("\n SSM is not available.\n");
+    g_ssm_enable = 0;
+    gtk_exit(0);
+  }else{
+    g_ssm_enable = 1;
+    g_odm_bs_sid=openSSM("spur_odometry",0,0);
+    g_motor_sid =openSSM("pws_motor",0,0);
+  }
+  SHSpur_init();
+
+  printf("SH Spur parameter tuner\n");
+
+  fprintf(stderr,"start\n");
+  g_count = 0;  
+  cnt_wp=0;
+  g_motor_tid = readSSM(g_motor_sid, &motor, &time, -1);
+  //  set_color();
+}
+
+GdkGC* set_color(GdkGC* gc, int r,int g,int b)
+{
+  GdkColor color;
+
+  color.red = r;
+  color.green = g;
+  color.blue = b;
+
+  gdk_color_alloc(gdk_colormap_get_system(), &color);
+  gdk_gc_set_foreground(gc, &color);
+ 
+  return gc;
+}
+
+
+gint Repaint(gpointer data){
+  GtkNotebook notebook;
+  GtkWidget* drawing_area;
+  GdkDrawable *drawable;
+  int i,j;  
+  PWSMotor motor;
+  double time;
+
+  /*read SSM data*/
+  while((readSSM(g_motor_sid, &motor, &time,g_motor_tid)) > 0){
+    cnt1_log[cnt_wp] = motor.counter1;
+    cnt2_log[cnt_wp] = motor.counter2;
+    pwm1_log[cnt_wp] = motor.pwm1;
+    pwm2_log[cnt_wp] = motor.pwm2;
+    cnt_wp++;
+    if(cnt_wp >= LOG_SIZE)cnt_wp = 0;
+    g_motor_tid++;
+  }
+   
+  switch(gtk_notebook_get_current_page(lookup_widget(GTK_WIDGET(data),"notebook1"))){
+  case 0:
+    break;
+  case 1:
+    /*velocity*/
+    drawing_area = lookup_widget(GTK_WIDGET(data),"drawingarea1");
+    drawable  = drawing_area->window;
+
+    
+    g_count --;    
+    if(g_count > 0){
+      //g_ref_speed;
+    }else if(g_count == 0){
+      SHSpur_wheel_vel(0,0);
+    }else{
+      g_count = 0;
+    }
+    gdk_draw_rectangle(drawable,drawing_area->style->white_gc,
+		       TRUE,
+		       0,0, 
+		       drawing_area->allocation.width,
+		       drawing_area->allocation.height);
+    // set_color(0,0,0);
+   gdk_draw_line(drawable, drawing_area->style->black_gc,
+		  0,drawing_area->allocation.height/2, 
+		  drawing_area->allocation.width,
+		  drawing_area->allocation.height/2);
+   set_color( drawing_area->style->fg_gc[GTK_STATE_NORMAL],0xffff,0,0);
+   gdk_draw_line(drawable, drawing_area->style->fg_gc[GTK_STATE_NORMAL],
+		  0,drawing_area->allocation.height/2-
+		 g_ref_speed*5*g_P[GEAR]*g_P[COUNT_REV]*g_P[CYCLE]/(2*M_PI), 
+		  drawing_area->allocation.width,
+		  drawing_area->allocation.height/2-
+		 g_ref_speed*5*g_P[GEAR]*g_P[COUNT_REV]*g_P[CYCLE]/(2*M_PI));
+
+
+    if(cnt_wp < LOG_SIZE)j = 0;
+    else j = cnt_wp-LOG_SIZE+1;
+    
+    for(i=j; i<cnt_wp; i++){
+      set_color(drawing_area->style->fg_gc[GTK_STATE_NORMAL],0,0xffff,0);
+      if(i%LOG_SIZE != 0)
+	gdk_draw_line(drawable,drawing_area->style->fg_gc[GTK_STATE_NORMAL],
+		      ((i-1)%LOG_SIZE),
+		      drawing_area->allocation.height/2-cnt1_log[(i-1)%LOG_SIZE], 
+		      (i%LOG_SIZE),
+		      drawing_area->allocation.height/2-cnt1_log[i%LOG_SIZE]);
+      set_color(drawing_area->style->fg_gc[GTK_STATE_NORMAL],0,0,0xffff);
+      if(i%LOG_SIZE != 0)
+	gdk_draw_line(drawable,drawing_area->style->fg_gc[GTK_STATE_NORMAL],
+		      ((i-1)%LOG_SIZE),
+		      drawing_area->allocation.height/2
+		      -pwm1_log[(i-1)%LOG_SIZE]/(5*g_P[PWM_MAX]/100.0), 
+		      (i%LOG_SIZE),
+		      drawing_area->allocation.height/2
+		      -pwm1_log[i%LOG_SIZE]/(5*g_P[PWM_MAX]/100.0));
+    } 
+    set_color(drawing_area->style->fg_gc[GTK_STATE_NORMAL],0,0x8fff,0);
+    gdk_draw_line(drawable,drawing_area->style->fg_gc[GTK_STATE_NORMAL],
+		  (cnt_wp%LOG_SIZE),0, 
+		  (cnt_wp%LOG_SIZE),
+		  drawing_area->allocation.height);
+    set_color(drawing_area->style->fg_gc[GTK_STATE_NORMAL],0,0,0);
+    break;
+  case 2: 
+    drawing_area = lookup_widget(GTK_WIDGET(data),"drawingarea2");
+    drawable  = drawing_area->window;
+    gdk_draw_rectangle(drawable, 
+		       drawing_area->style->white_gc,
+		       TRUE,
+		       0,0, 
+		       drawing_area->allocation.width,
+		       drawing_area->allocation.height);
+    gdk_draw_line(drawable, 
+		  drawing_area->style->black_gc,
+		  0,drawing_area->allocation.height/2, 
+		  drawing_area->allocation.width,
+		  drawing_area->allocation.height/2);
+    gdk_draw_line(drawable, 
+		  drawing_area->style->black_gc,
+		  drawing_area->allocation.width/2,0, 
+		  drawing_area->allocation.width/2,
+		  drawing_area->allocation.height); 
+    if(odm_wp < LOG_SIZE)j = 0;
+    else j = odm_wp-LOG_SIZE+1;
+    
+    for(i=j; i<odm_wp; i++){
+      if(i%LOG_SIZE != 0)
+	gdk_draw_line(drawable,drawing_area->style->black_gc,
+		    drawing_area->allocation.width/2
+		    -100.0*odm_log[(i-1)%LOG_SIZE].x,
+		    drawing_area->allocation.height/2
+		    -100.0*odm_log[(i-1)%LOG_SIZE].y,
+		    drawing_area->allocation.width/2
+		    -100.0*odm_log[(i)%LOG_SIZE].x,
+		    drawing_area->allocation.height/2
+		    -100.0*odm_log[(i)%LOG_SIZE].y);
+    }
+    break;
+  case 3:
+    break;
+  default:
+    break;
+  }
+ // if(notebook->)
+ return TRUE;
+}
+
+double get_time(void)
+{
+  struct timeval current;
+
+  gettimeofday(&current, NULL); 
+  
+  return  current.tv_sec + current.tv_usec/SECOND;   
+}
+
+/*-----------------------------------------------------------------*/
+int is_character(int c){
+  if(c >= 'A' && c <='Z')return 1;
+  if(c >= 'a' && c <='z')return 1;
+  if(c == '_')return 1;
+  return 0;
+}
+/*-----------------------------------------------------------*/
+int is_number(int c){
+  if(c >= '0' && c <='9')return 1;
+  if(c == '-')return 1;
+  if(c == '.')return 1;
+  return 0;
+}
+
+/*-----------------------------------------------------------*/
+/**/
+int set_param(char *filename){
+  FILE* paramfile;
+  char  param_names[PARAM_NUM][20] = PARAM_NAME;
+  char name[20],value_str[100];
+  int i,c;
+  int str_wp;
+  int read_state;
+
+  /**/
+  paramfile = fopen(filename, "r");
+  if(!paramfile){
+    printf("File [%s] is not exist.\n",filename);
+    return 0;
+  }
+  for(i = 0; i < PARAM_NUM; i++){
+    g_P[i] = 0;
+  }
+
+  read_state = 0;
+  str_wp = 0;
+  while((c = getc(paramfile)) != EOF){
+    switch(read_state){
+    case 0:/**/
+      if(c == '#'){
+	read_state = 1;
+      }
+      if(is_character(c)){
+	name[0] = c;
+	read_state = 2;
+	str_wp = 1;
+      }
+      break;
+    case 1:/*comment*/
+      if(c == '\n'){
+	read_state = 0;
+      }
+      break;
+    case 2:/*name*/
+      name[str_wp] = c;
+      if(!(is_character(c)||is_number(c))){
+	name[str_wp] = 0;
+	read_state = 3;
+	str_wp = 0;
+      }else{
+	str_wp++;
+      }
+      break;
+    case 3:/*value */
+      if(is_number(c)){
+	str_wp = 0;
+	value_str[str_wp] = c;
+	str_wp++;
+	read_state = 4;
+      }
+      break;
+    case 4:/*value */
+      value_str[str_wp] = c;
+      if(!is_number(c)){
+	value_str[str_wp] = 0;
+	read_state = 0;
+	for(i = 0; i < PARAM_NUM; i++){
+	  if(!strcmp(name, param_names[i])){
+	    g_P[i] = strtod(value_str,0);
+	    printf("%s %f\n",name,g_P[i]);
+	    break;
+	  }
+	} 
+      }else{
+	str_wp++;
+      }
+    }
+  }
+  fclose(paramfile);
+  return 1;
+}
+
+
+/*-----------------------------------------------------------*/
+void set_spinbutton_value(GtkButton *button, char *name, double value){
+  GtkSpinButton *a_spin;
+
+  a_spin = lookup_widget ( GTK_WIDGET(button), name);
+  gtk_spin_button_set_value(a_spin, value );
+
+}
+
+/*-----------------------------------------------------------*/
+void parameter_load(GtkButton *button){
+  int i;
+  /*motor parameter*/
+  set_spinbutton_value(button, "spinbutton3",g_P[VOLT]);
+  set_spinbutton_value(button, "spinbutton4",g_P[MOTOR_R]);
+  set_spinbutton_value(button, "spinbutton5",g_P[MOTOR_TC]*1000.0);
+  set_spinbutton_value(button, "spinbutton6",g_P[MOTOR_VC]);
+  set_spinbutton_value(button, "spinbutton7",g_P[COUNT_REV]);
+  set_spinbutton_value(button, "spinbutton8",g_P[GEAR]);
+  set_spinbutton_value(button, "spinbutton9",28000000.0/g_P[PWM_MAX]);
+  /*servo parameter*/
+  set_spinbutton_value(button, "spinbutton11",g_P[GAIN_KP]);
+  set_spinbutton_value(button, "spinbutton14",g_P[GAIN_KI]);
+  set_spinbutton_value(button, "spinbutton15",g_P[INTEGRAL_MAX]);
+  set_spinbutton_value(button, "spinbutton12",g_P[TORQUE_NEWTON]*1000.0);
+  set_spinbutton_value(button, "spinbutton13",g_P[TORQUE_VISCOS]*1000.0);
+  /*body parameter*/
+  set_spinbutton_value(button, "spinbutton16",g_P[RADIUS_R]);
+  set_spinbutton_value(button, "spinbutton17",g_P[RADIUS_L]);
+  set_spinbutton_value(button, "spinbutton18",g_P[TREAD]);
+  //  set_spinbutton_value(button, "spinbutton19",g_P[RADIUS_L]);
+  set_spinbutton_value(button, "spinbutton20",g_P[TORQUE_UNIT]);
+  set_spinbutton_value(button, "spinbutton22",g_P[TORQUE_MAX]*1000.0);
+  set_spinbutton_value(button, "spinbutton25",g_P[TORQUE_OFFSET]*1000.0);
+
+  for(i = 0;i < PARAM_NUM;i++){
+    SHSpur_parameter_set(i,g_P[i]);
+  }
+}
+/*-----------------------------------------------------------*/
+int  parameter_save(char *name){
+  FILE* paramfile;
+  char  param_names[PARAM_NUM][20] = PARAM_NAME;
+  char  param_comments[PARAM_NUM][40] = PARAM_COMMENT;
+  int i;
+
+  if(!(paramfile = fopen(name, "w"))){
+    printf("Can't open file %s.\n", name);
+    return 0; 
+  }
+  for(i = 0; i<PARAM_NUM; i++){
+    fprintf(paramfile,"%16s %16.8lf #%s\n",param_names[i],g_P[i], param_comments[i]);
+  }
+  return 1;
+}
+/*-----------------------------------------------------------*/
+void
+on_LoadButton_clicked                  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+  GtkEntry *filename_entry;
+
+  filename_entry = lookup_widget ( GTK_WIDGET(button), "filename_entry" );
+  
+  if(!(set_param(gtk_entry_get_text(filename_entry)))){
+    g_print("File %s is not exist.\n",gtk_entry_get_text(filename_entry));
+  }else{
+    g_print("load %s\n",gtk_entry_get_text(filename_entry ));
+    parameter_load(button);
+  }
+}
+
+
+void
+on_SaveButton_clicked                  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+  GtkEntry *filename_entry;
+   
+  filename_entry = lookup_widget ( GTK_WIDGET(button), "filename_entry" );
+  
+  if(!(parameter_save(gtk_entry_get_text(filename_entry )))){
+    g_print("File %s is not exist.\n",gtk_entry_get_text(filename_entry));
+  }else{
+    g_print("Save %s\n",gtk_entry_get_text(filename_entry ));
+    /*File save*/
+  }
+}
+
+
+void
+on_window1_destroy                     (GtkObject       *object,
+                                        gpointer         user_data)
+{
+  gtk_exit(0);
+}
+
+
+
+void
+on_spinbutton3_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[VOLT] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+ 
+  g_print("volt =%f\n",g_P[VOLT]);
+}
+
+
+void
+on_spinbutton4_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[MOTOR_R] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+
+  g_print("regist =%f\n",g_P[MOTOR_R]);
+}
+
+
+void
+on_spinbutton5_value_changed           (GtkSpinButton   *spinbutton,
+                                        gpointer         user_data)
+{
+  g_print("5vc\n");
+}
+
+
+void
+on_spinbutton5_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[MOTOR_TC] =  strtod(gtk_editable_get_chars (editable, 0, -1),0)/1000.0;
+  g_print("tc =%f\n",g_P[MOTOR_TC]);
+}
+
+
+void
+on_spinbutton6_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[MOTOR_VC] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+
+  g_print("vc =%f\n",g_P[MOTOR_VC]);
+}
+
+
+void
+on_spinbutton7_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[COUNT_REV] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+
+  g_print("encorder =%f\n",g_P[COUNT_REV]);
+}
+
+
+void
+on_spinbutton8_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[GEAR] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+
+  g_print("gear ratio =%f\n",g_P[GEAR]);
+}
+
+
+void
+on_button12_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+  g_print("parameter set\n");
+  SHSpur_parameter_set(TORQUE_UNIT, g_P[TORQUE_UNIT]);
+
+  SHSpur_parameter_set(VOLT, g_P[VOLT]);
+  SHSpur_parameter_set(MOTOR_R, g_P[MOTOR_R]);  
+  SHSpur_parameter_set(MOTOR_TC, g_P[MOTOR_TC]);
+  SHSpur_parameter_set(MOTOR_VC, g_P[MOTOR_VC]);
+  SHSpur_parameter_set(COUNT_REV, g_P[COUNT_REV]);
+  SHSpur_parameter_set(GEAR, g_P[GEAR]);
+  SHSpur_parameter_set(PWM_MAX, g_P[PWM_MAX]);
+  SHSpur_parameter_set(TORQUE_NEWTON, g_P[TORQUE_NEWTON]);
+  SHSpur_parameter_set(TORQUE_VISCOS, g_P[TORQUE_VISCOS]);
+  SHSpur_parameter_set(TORQUE_MAX, g_P[TORQUE_MAX]);
+  SHSpur_parameter_set(TORQUE_OFFSET, g_P[TORQUE_OFFSET]);
+
+  SHSpur_parameter_state(SHSPUR_PARAM_MOTOR, ENABLE);
+}
+
+
+void
+on_button13_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+  SHSpur_parameter_set(GAIN_KP, g_P[GAIN_KP]);
+  SHSpur_parameter_set(GAIN_KI, g_P[GAIN_KI]);
+
+  SHSpur_parameter_set(INTEGRAL_MAX, g_P[INTEGRAL_MAX]);
+
+  SHSpur_parameter_state(SHSPUR_PARAM_VELOCITY, ENABLE);
+
+  if(g_state & MOTOR_PARAMETER)g_state |= SERVO_PARAMETER;
+}
+
+
+void
+on_button14_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+  SHSpur_parameter_state(SHSPUR_PARAM_BODY, ENABLE);
+
+  if(g_state & SERVO_PARAMETER)g_state |= BODY_PARAMETER;
+}
+
+
+void
+on_spinbutton10_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_ref_speed =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+  
+  g_print("ref speed =%f\n",g_ref_speed);
+}
+
+
+void
+on_spinbutton11_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[GAIN_KP] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+  
+  g_print("Kp =%f\n",g_P[GAIN_KP]);
+}
+
+
+void
+on_spinbutton12_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[TORQUE_NEWTON] = strtod(gtk_editable_get_chars (editable, 0, -1),0)/1000.0;
+
+  g_print("Torque(static) =%f[Nm](%f[IntNm])\n",
+	  g_P[TORQUE_NEWTON] ,g_P[TORQUE_NEWTON]*g_P[TORQUE_UNIT]);
+}
+
+
+void
+on_spinbutton13_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[TORQUE_VISCOS] = strtod(gtk_editable_get_chars (editable, 0, -1),0)/1000.0;
+
+  g_print("Torque(viscos) =%f[Nm](%f[IntNm])\n",
+	  g_P[TORQUE_VISCOS], g_P[TORQUE_VISCOS]*g_P[TORQUE_UNIT]);
+}
+
+
+void
+on_spinbutton14_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[GAIN_KI] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+  
+  g_print("Ki =%f\n",g_P[GAIN_KI]);
+}
+
+
+void
+on_spinbutton15_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[INTEGRAL_MAX] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+
+  g_print("Integral max =%f\n",g_P[INTEGRAL_MAX]);
+}
+
+
+void
+on_button15_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+  SHSpur_parameter_state(SHSPUR_PARAM_VELOCITY, ENABLE);
+
+  SHSpur_wheel_vel(g_ref_speed, g_ref_speed);
+  g_count = 20;
+  //g_run_mode = RUN_VELOCITY;
+}
+
+
+void
+on_spinbutton20_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[TORQUE_UNIT] =  strtod(gtk_editable_get_chars (editable, 0, -1),0);
+
+  g_print("1[Nm] =%f[Integer Nm]\n",g_P[TORQUE_UNIT]);
+}
+
+
+void
+on_spinbutton9_changed                 (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  int pwm;
+
+  pwm =  28000000.0/strtod(gtk_editable_get_chars (editable, 0, -1),0);
+  if (pwm < 10)pwm = 10;
+  if (pwm > 65535)pwm = 65535;
+  g_P[PWM_MAX] = pwm;
+
+  g_print("pwm max =%f\n",g_P[PWM_MAX]);
+}
+
+
+/*
+void
+on_spinbutton10_changed                (GtkEditable     *editable,
+gpointer         user_data)
+{
+
+}
+*/
+
+
+void
+on_spinbutton22_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[TORQUE_MAX] = strtod(gtk_editable_get_chars (editable, 0, -1),0)/1000.0;
+
+  g_print("Torque Limit %f[Nm](%f[IntNm])\n",g_P[TORQUE_MAX],g_P[TORQUE_MAX]*g_P[TORQUE_UNIT]);
+}
+
+
+void
+on_spinbutton25_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+  g_P[TORQUE_OFFSET]=strtod(gtk_editable_get_chars (editable, 0, -1),0)/1000.0;
+
+  g_print("Torque Offset %f[Nm](%f[IntNm])\n",
+	  g_P[TORQUE_OFFSET],g_P[TORQUE_OFFSET]*g_P[TORQUE_UNIT]);
+
+}
+
+
+void
+on_spinbutton19_changed                (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button11_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+  //  GTKTextView *text_view;
+
+}
+

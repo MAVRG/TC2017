@@ -1,0 +1,7 @@
+epoch:=0 ,train_acc:=100.816493 ,test_acc:=100.825017
+epoch:=1 ,train_acc:=32.256622 ,test_acc:=32.298815
+epoch:=2 ,train_acc:=8.785657 ,test_acc:=8.841066
+epoch:=3 ,train_acc:=3.707301 ,test_acc:=3.753749 ModelSave!
+epoch:=4 ,train_acc:=2.279353 ,test_acc:=2.308484 ModelSave!
+epoch:=5 ,train_acc:=1.568426 ,test_acc:=1.614944 ModelSave!
+epoch:=6 ,train_acc:=1.137795 ,test_acc:=1.180398 ModelSave!

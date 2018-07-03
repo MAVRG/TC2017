@@ -1,0 +1,21 @@
+epoch:=0 ,train_acc:=100.747974 ,test_acc:=100.747592
+epoch:=1 ,train_acc:=34.760263 ,test_acc:=34.796835
+epoch:=2 ,train_acc:=10.592281 ,test_acc:=10.649036
+epoch:=3 ,train_acc:=4.536706 ,test_acc:=4.562181
+epoch:=4 ,train_acc:=2.880221 ,test_acc:=2.908767 ModelSave!
+epoch:=5 ,train_acc:=1.947222 ,test_acc:=2.015135 ModelSave!
+epoch:=6 ,train_acc:=1.404478 ,test_acc:=1.444353 ModelSave!
+epoch:=7 ,train_acc:=1.044148 ,test_acc:=1.078236 ModelSave!
+epoch:=8 ,train_acc:=1.205012 ,test_acc:=1.189433
+epoch:=9 ,train_acc:=0.864578 ,test_acc:=0.850137 ModelSave!
+epoch:=10 ,train_acc:=0.725031 ,test_acc:=0.719995 ModelSave!
+epoch:=11 ,train_acc:=0.639510 ,test_acc:=0.694768 ModelSave!
+epoch:=12 ,train_acc:=0.673288 ,test_acc:=0.737465
+epoch:=13 ,train_acc:=0.605940 ,test_acc:=0.655714 ModelSave!
+epoch:=14 ,train_acc:=0.646882 ,test_acc:=0.668825
+epoch:=15 ,train_acc:=0.599416 ,test_acc:=0.668870
+epoch:=16 ,train_acc:=0.579065 ,test_acc:=0.635167 ModelSave!
+epoch:=17 ,train_acc:=0.532610 ,test_acc:=0.570172 ModelSave!
+epoch:=18 ,train_acc:=0.787728 ,test_acc:=0.761316
+epoch:=19 ,train_acc:=0.597015 ,test_acc:=0.605889
+epoch:=20 ,train_acc:=0.598761 ,test_acc:=0.589758

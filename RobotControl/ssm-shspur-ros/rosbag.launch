@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="rosbag" type="record" name="recorder" args="record /scan /hokuyo_node/parameter_descriptions /hokuyo_node/parameter_updates /points_raw /velodyne_nodelet_manager/bond /velodyne_packets /twist_cmd /image_raw /joy/cmd_vel /tf /tf_static -o /media/kerberos/Samsung_T31/"/>
+</launch>

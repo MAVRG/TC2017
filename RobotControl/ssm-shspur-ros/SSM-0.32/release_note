@@ -1,0 +1,23 @@
+3.2
+大きな変更　　　gettimeSSM()で取得する時間を、SSM固有のものに変更。
+　　　　　　　　通常時は現在時刻を取得できるが、ログ再生時などはログの時刻になる。
+
+   libSSM.c   readSSM()で、dataのポインタが0の時コピーを行わないよう変更。 
+              settimeSSM()を追加。
+	      gettimeSSM()を変更。オフセット、速度変更が可能。 
+　　　　　　　　initSSM()でメッセージ通信でssm_common_dataのIDを受け取るよう変更
+   ssm.c      SSM共通情報を扱う共有メモリssm_common_dataを追加
+   	      initSSM()でメッセージ通信を介してssm_common_dataのIDを渡すよう変更
+   lsssm      センサ名などの文字数変更。
+　　　　　　　　データサイズの大きいものはKB,MB表記に変更。
+　　　　　　　　寿命（life）表記追加
+　　　　　　　　データの更新速度（count/s）を追加
+   ssmmultiplayer 
+              再生速度変更機能をlibssm(gettimeSSM())に委ねた。
+              logの時間で再生。（gettimeSSMをすると、logの時間を取得）
+   ssmtransport 
+              propertyが送れない問題についてデバッグ
+              現在時刻で再生。
+
+
+3.1 first release

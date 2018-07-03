@@ -1,0 +1,17 @@
+#ifndef __COMMAND__
+#define __COMMAND__
+
+
+enum{
+  RUN_FREE = 0,
+    RUN_STOP,
+    RUN_LINEFOLLOW,
+    RUN_TO_POINT,
+    RUN_CIRCLEFOLLOW,
+    RUN_SPIN,
+    RUN_VELOCITY
+};
+
+void command(void);
+
+#endif

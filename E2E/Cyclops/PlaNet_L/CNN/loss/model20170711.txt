@@ -1,0 +1,1999 @@
+epoch:=100 ,test_acc:=4.598591
+epoch:=200 ,test_acc:=1.676192
+epoch:=300 ,test_acc:=1.080987
+epoch:=400 ,test_acc:=0.915266 ModelSave!
+epoch:=500 ,test_acc:=0.853993 ModelSave!
+epoch:=600 ,test_acc:=0.826726 ModelSave!
+epoch:=700 ,test_acc:=0.811067 ModelSave!
+epoch:=800 ,test_acc:=0.803901 ModelSave!
+epoch:=900 ,test_acc:=0.799190 ModelSave!
+epoch:=1000 ,test_acc:=0.796943 ModelSave!
+epoch:=1100 ,test_acc:=0.794683 ModelSave!
+epoch:=1200 ,test_acc:=0.793259 ModelSave!
+epoch:=1300 ,test_acc:=0.792082 ModelSave!
+epoch:=1400 ,test_acc:=0.791689 ModelSave!
+epoch:=1500 ,test_acc:=0.791403 ModelSave!
+epoch:=1600 ,test_acc:=0.791202 ModelSave!
+epoch:=1700 ,test_acc:=0.791016 ModelSave!
+epoch:=1800 ,test_acc:=0.790876 ModelSave!
+epoch:=1900 ,test_acc:=0.790722 ModelSave!
+epoch:=2000 ,test_acc:=0.790465 ModelSave!
+epoch:=2100 ,test_acc:=0.790337 ModelSave!
+epoch:=2200 ,test_acc:=0.790387
+epoch:=2300 ,test_acc:=0.790016 ModelSave!
+epoch:=2400 ,test_acc:=0.789750 ModelSave!
+epoch:=2500 ,test_acc:=0.789500 ModelSave!
+epoch:=2600 ,test_acc:=0.789097 ModelSave!
+epoch:=2700 ,test_acc:=0.788326 ModelSave!
+epoch:=2800 ,test_acc:=0.788277 ModelSave!
+epoch:=2900 ,test_acc:=0.787270 ModelSave!
+epoch:=3000 ,test_acc:=0.786872 ModelSave!
+epoch:=3100 ,test_acc:=0.786324 ModelSave!
+epoch:=3200 ,test_acc:=0.785615 ModelSave!
+epoch:=3300 ,test_acc:=0.784885 ModelSave!
+epoch:=3400 ,test_acc:=0.785638
+epoch:=3500 ,test_acc:=0.783990 ModelSave!
+epoch:=3600 ,test_acc:=0.782717 ModelSave!
+epoch:=3700 ,test_acc:=0.781415 ModelSave!
+epoch:=3800 ,test_acc:=0.779248 ModelSave!
+epoch:=3900 ,test_acc:=0.776823 ModelSave!
+epoch:=4000 ,test_acc:=0.774424 ModelSave!
+epoch:=4100 ,test_acc:=0.771332 ModelSave!
+epoch:=4200 ,test_acc:=0.768719 ModelSave!
+epoch:=4300 ,test_acc:=0.762376 ModelSave!
+epoch:=4400 ,test_acc:=0.754783 ModelSave!
+epoch:=4500 ,test_acc:=0.743283 ModelSave!
+epoch:=4600 ,test_acc:=0.718188 ModelSave!
+epoch:=4700 ,test_acc:=0.668866 ModelSave!
+epoch:=4800 ,test_acc:=0.627356 ModelSave!
+epoch:=4900 ,test_acc:=0.605237 ModelSave!
+epoch:=5000 ,test_acc:=0.603477 ModelSave!
+epoch:=5100 ,test_acc:=0.593695 ModelSave!
+epoch:=5200 ,test_acc:=0.592711 ModelSave!
+epoch:=5300 ,test_acc:=0.586931 ModelSave!
+epoch:=5400 ,test_acc:=0.585421 ModelSave!
+epoch:=5500 ,test_acc:=0.580462 ModelSave!
+epoch:=5600 ,test_acc:=0.578986 ModelSave!
+epoch:=5700 ,test_acc:=0.575103 ModelSave!
+epoch:=5800 ,test_acc:=0.573130 ModelSave!
+epoch:=5900 ,test_acc:=0.571759 ModelSave!
+epoch:=6000 ,test_acc:=0.567970 ModelSave!
+epoch:=6100 ,test_acc:=0.567096 ModelSave!
+epoch:=6200 ,test_acc:=0.562711 ModelSave!
+epoch:=6300 ,test_acc:=0.558922 ModelSave!
+epoch:=6400 ,test_acc:=0.557594 ModelSave!
+epoch:=6500 ,test_acc:=0.555111 ModelSave!
+epoch:=6600 ,test_acc:=0.553073 ModelSave!
+epoch:=6700 ,test_acc:=0.552150 ModelSave!
+epoch:=6800 ,test_acc:=0.552684
+epoch:=6900 ,test_acc:=0.571482
+epoch:=7000 ,test_acc:=0.548941 ModelSave!
+epoch:=7100 ,test_acc:=0.550593
+epoch:=7200 ,test_acc:=0.543824 ModelSave!
+epoch:=7300 ,test_acc:=0.546257
+epoch:=7400 ,test_acc:=0.547972
+epoch:=7500 ,test_acc:=0.539756 ModelSave!
+epoch:=7600 ,test_acc:=0.535316 ModelSave!
+epoch:=7700 ,test_acc:=0.532716 ModelSave!
+epoch:=7800 ,test_acc:=0.549798
+epoch:=7900 ,test_acc:=0.533234
+epoch:=8000 ,test_acc:=0.540193
+epoch:=8100 ,test_acc:=0.531625 ModelSave!
+epoch:=8200 ,test_acc:=0.537756
+epoch:=8300 ,test_acc:=0.523686 ModelSave!
+epoch:=8400 ,test_acc:=0.529310
+epoch:=8500 ,test_acc:=0.528142
+epoch:=8600 ,test_acc:=0.539598
+epoch:=8700 ,test_acc:=0.534602
+epoch:=8800 ,test_acc:=0.518557 ModelSave!
+epoch:=8900 ,test_acc:=0.522803
+epoch:=9000 ,test_acc:=0.513568 ModelSave!
+epoch:=9100 ,test_acc:=0.513450 ModelSave!
+epoch:=9200 ,test_acc:=0.510869 ModelSave!
+epoch:=9300 ,test_acc:=0.507053 ModelSave!
+epoch:=9400 ,test_acc:=0.587210
+epoch:=9500 ,test_acc:=0.503625 ModelSave!
+epoch:=9600 ,test_acc:=0.501221 ModelSave!
+epoch:=9700 ,test_acc:=0.501186 ModelSave!
+epoch:=9800 ,test_acc:=0.499493 ModelSave!
+epoch:=9900 ,test_acc:=0.519574
+epoch:=10000 ,test_acc:=0.492380 ModelSave!
+epoch:=10100 ,test_acc:=0.516800
+epoch:=10200 ,test_acc:=0.488020 ModelSave!
+epoch:=10300 ,test_acc:=0.485436 ModelSave!
+epoch:=10400 ,test_acc:=0.486778
+epoch:=10500 ,test_acc:=0.484169 ModelSave!
+epoch:=10600 ,test_acc:=0.483029 ModelSave!
+epoch:=10700 ,test_acc:=0.477688 ModelSave!
+epoch:=10800 ,test_acc:=0.477428 ModelSave!
+epoch:=10900 ,test_acc:=0.475157 ModelSave!
+epoch:=11000 ,test_acc:=0.491035
+epoch:=11100 ,test_acc:=0.472080 ModelSave!
+epoch:=11200 ,test_acc:=0.473988
+epoch:=11300 ,test_acc:=0.472663
+epoch:=11400 ,test_acc:=0.478211
+epoch:=11500 ,test_acc:=0.488701
+epoch:=11600 ,test_acc:=0.482530
+epoch:=11700 ,test_acc:=0.470547 ModelSave!
+epoch:=11800 ,test_acc:=0.468873 ModelSave!
+epoch:=11900 ,test_acc:=0.466055 ModelSave!
+epoch:=12000 ,test_acc:=0.481212
+epoch:=12100 ,test_acc:=0.464452 ModelSave!
+epoch:=12200 ,test_acc:=0.462431 ModelSave!
+epoch:=12300 ,test_acc:=0.464539
+epoch:=12400 ,test_acc:=0.487239
+epoch:=12500 ,test_acc:=0.461862 ModelSave!
+epoch:=12600 ,test_acc:=0.458947 ModelSave!
+epoch:=12700 ,test_acc:=0.458176 ModelSave!
+epoch:=12800 ,test_acc:=0.464251
+epoch:=12900 ,test_acc:=0.460757
+epoch:=13000 ,test_acc:=0.463756
+epoch:=13100 ,test_acc:=0.466453
+epoch:=13200 ,test_acc:=0.461777
+epoch:=13300 ,test_acc:=0.465821
+epoch:=13400 ,test_acc:=0.453695 ModelSave!
+epoch:=13500 ,test_acc:=0.464266
+epoch:=13600 ,test_acc:=0.483746
+epoch:=13700 ,test_acc:=0.465842
+epoch:=13800 ,test_acc:=0.450074 ModelSave!
+epoch:=13900 ,test_acc:=0.461774
+epoch:=14000 ,test_acc:=0.463977
+epoch:=14100 ,test_acc:=0.451891
+epoch:=14200 ,test_acc:=0.449362 ModelSave!
+epoch:=14300 ,test_acc:=0.448351 ModelSave!
+epoch:=14400 ,test_acc:=0.464516
+epoch:=14500 ,test_acc:=0.454511
+epoch:=14600 ,test_acc:=0.461013
+epoch:=14700 ,test_acc:=0.446184 ModelSave!
+epoch:=14800 ,test_acc:=0.459627
+epoch:=14900 ,test_acc:=0.449130
+epoch:=15000 ,test_acc:=0.449132
+epoch:=15100 ,test_acc:=0.522155
+epoch:=15200 ,test_acc:=0.453135
+epoch:=15300 ,test_acc:=0.456163
+epoch:=15400 ,test_acc:=0.445791 ModelSave!
+epoch:=15500 ,test_acc:=0.456753
+epoch:=15600 ,test_acc:=0.449389
+epoch:=15700 ,test_acc:=0.440789 ModelSave!
+epoch:=15800 ,test_acc:=0.460619
+epoch:=15900 ,test_acc:=0.441303
+epoch:=16000 ,test_acc:=0.447679
+epoch:=16100 ,test_acc:=0.446039
+epoch:=16200 ,test_acc:=0.449394
+epoch:=16300 ,test_acc:=0.439259 ModelSave!
+epoch:=16400 ,test_acc:=0.440222
+epoch:=16500 ,test_acc:=0.440304
+epoch:=16600 ,test_acc:=0.483795
+epoch:=16700 ,test_acc:=0.488533
+epoch:=16800 ,test_acc:=0.483330
+epoch:=16900 ,test_acc:=0.448516
+epoch:=17000 ,test_acc:=0.446853
+epoch:=17100 ,test_acc:=0.444060
+epoch:=17200 ,test_acc:=0.446802
+epoch:=17300 ,test_acc:=0.442765
+epoch:=17400 ,test_acc:=0.435060 ModelSave!
+epoch:=17500 ,test_acc:=0.439070
+epoch:=17600 ,test_acc:=0.446860
+epoch:=17700 ,test_acc:=0.434681 ModelSave!
+epoch:=17800 ,test_acc:=0.469781
+epoch:=17900 ,test_acc:=0.441264
+epoch:=18000 ,test_acc:=0.433214 ModelSave!
+epoch:=18100 ,test_acc:=0.433253
+epoch:=18200 ,test_acc:=0.432502 ModelSave!
+epoch:=18300 ,test_acc:=0.440328
+epoch:=18400 ,test_acc:=0.437147
+epoch:=18500 ,test_acc:=0.444942
+epoch:=18600 ,test_acc:=0.438597
+epoch:=18700 ,test_acc:=0.442136
+epoch:=18800 ,test_acc:=0.429717 ModelSave!
+epoch:=18900 ,test_acc:=0.439003
+epoch:=19000 ,test_acc:=0.438351
+epoch:=19100 ,test_acc:=0.430881
+epoch:=19200 ,test_acc:=0.444455
+epoch:=19300 ,test_acc:=0.428596 ModelSave!
+epoch:=19400 ,test_acc:=0.432868
+epoch:=19500 ,test_acc:=0.430315
+epoch:=19600 ,test_acc:=0.440350
+epoch:=19700 ,test_acc:=0.440683
+epoch:=19800 ,test_acc:=0.429808
+epoch:=19900 ,test_acc:=0.427579 ModelSave!
+epoch:=20000 ,test_acc:=0.445394
+epoch:=20100 ,test_acc:=0.445360
+epoch:=20200 ,test_acc:=0.428512
+epoch:=20300 ,test_acc:=0.433326
+epoch:=20400 ,test_acc:=0.441434
+epoch:=20500 ,test_acc:=0.453803
+epoch:=20600 ,test_acc:=0.435526
+epoch:=20700 ,test_acc:=0.425256 ModelSave!
+epoch:=20800 ,test_acc:=0.424144 ModelSave!
+epoch:=20900 ,test_acc:=0.431560
+epoch:=21000 ,test_acc:=0.425954
+epoch:=21100 ,test_acc:=0.428930
+epoch:=21200 ,test_acc:=0.447773
+epoch:=21300 ,test_acc:=0.424044 ModelSave!
+epoch:=21400 ,test_acc:=0.484109
+epoch:=21500 ,test_acc:=0.430317
+epoch:=21600 ,test_acc:=0.446447
+epoch:=21700 ,test_acc:=0.422637 ModelSave!
+epoch:=21800 ,test_acc:=0.429861
+epoch:=21900 ,test_acc:=0.434878
+epoch:=22000 ,test_acc:=0.442669
+epoch:=22100 ,test_acc:=0.423819
+epoch:=22200 ,test_acc:=0.428838
+epoch:=22300 ,test_acc:=0.421703 ModelSave!
+epoch:=22400 ,test_acc:=0.420089 ModelSave!
+epoch:=22500 ,test_acc:=0.423232
+epoch:=22600 ,test_acc:=0.429112
+epoch:=22700 ,test_acc:=0.432138
+epoch:=22800 ,test_acc:=0.416520 ModelSave!
+epoch:=22900 ,test_acc:=0.418778
+epoch:=23000 ,test_acc:=0.418422
+epoch:=23100 ,test_acc:=0.418754
+epoch:=23200 ,test_acc:=0.425991
+epoch:=23300 ,test_acc:=0.432046
+epoch:=23400 ,test_acc:=0.431610
+epoch:=23500 ,test_acc:=0.434174
+epoch:=23600 ,test_acc:=0.418327
+epoch:=23700 ,test_acc:=0.422777
+epoch:=23800 ,test_acc:=0.419161
+epoch:=23900 ,test_acc:=0.422537
+epoch:=24000 ,test_acc:=0.436375
+epoch:=24100 ,test_acc:=0.435157
+epoch:=24200 ,test_acc:=0.482794
+epoch:=24300 ,test_acc:=0.426862
+epoch:=24400 ,test_acc:=0.436605
+epoch:=24500 ,test_acc:=0.477886
+epoch:=24600 ,test_acc:=0.448419
+epoch:=24700 ,test_acc:=0.418657
+epoch:=24800 ,test_acc:=0.449129
+epoch:=24900 ,test_acc:=0.439035
+epoch:=25000 ,test_acc:=0.411541 ModelSave!
+epoch:=25100 ,test_acc:=0.420458
+epoch:=25200 ,test_acc:=0.426017
+epoch:=25300 ,test_acc:=0.420793
+epoch:=25400 ,test_acc:=0.413817
+epoch:=25500 ,test_acc:=0.424296
+epoch:=25600 ,test_acc:=0.431361
+epoch:=25700 ,test_acc:=0.431910
+epoch:=25800 ,test_acc:=0.455295
+epoch:=25900 ,test_acc:=0.414309
+epoch:=26000 ,test_acc:=0.428499
+epoch:=26100 ,test_acc:=0.408173 ModelSave!
+epoch:=26200 ,test_acc:=0.419311
+epoch:=26300 ,test_acc:=0.414660
+epoch:=26400 ,test_acc:=0.411437
+epoch:=26500 ,test_acc:=0.433717
+epoch:=26600 ,test_acc:=0.413400
+epoch:=26700 ,test_acc:=0.416439
+epoch:=26800 ,test_acc:=0.410248
+epoch:=26900 ,test_acc:=0.407016 ModelSave!
+epoch:=27000 ,test_acc:=0.416185
+epoch:=27100 ,test_acc:=0.407179
+epoch:=27200 ,test_acc:=0.404021 ModelSave!
+epoch:=27300 ,test_acc:=0.404112
+epoch:=27400 ,test_acc:=0.468586
+epoch:=27500 ,test_acc:=0.412308
+epoch:=27600 ,test_acc:=0.408537
+epoch:=27700 ,test_acc:=0.411603
+epoch:=27800 ,test_acc:=0.419910
+epoch:=27900 ,test_acc:=0.410882
+epoch:=28000 ,test_acc:=0.403390 ModelSave!
+epoch:=28100 ,test_acc:=0.398809 ModelSave!
+epoch:=28200 ,test_acc:=0.399832
+epoch:=28300 ,test_acc:=0.395589 ModelSave!
+epoch:=28400 ,test_acc:=0.399571
+epoch:=28500 ,test_acc:=0.397265
+epoch:=28600 ,test_acc:=0.460491
+epoch:=28700 ,test_acc:=0.403974
+epoch:=28800 ,test_acc:=0.442264
+epoch:=28900 ,test_acc:=0.428552
+epoch:=29000 ,test_acc:=0.426788
+epoch:=29100 ,test_acc:=0.395432 ModelSave!
+epoch:=29200 ,test_acc:=0.396611
+epoch:=29300 ,test_acc:=0.398262
+epoch:=29400 ,test_acc:=0.397417
+epoch:=29500 ,test_acc:=0.392599 ModelSave!
+epoch:=29600 ,test_acc:=0.395359
+epoch:=29700 ,test_acc:=0.393826
+epoch:=29800 ,test_acc:=0.388822 ModelSave!
+epoch:=29900 ,test_acc:=0.399945
+epoch:=30000 ,test_acc:=0.386263 ModelSave!
+epoch:=30100 ,test_acc:=0.435722
+epoch:=30200 ,test_acc:=0.388370
+epoch:=30300 ,test_acc:=0.387846
+epoch:=30400 ,test_acc:=0.395830
+epoch:=30500 ,test_acc:=0.388108
+epoch:=30600 ,test_acc:=0.383460 ModelSave!
+epoch:=30700 ,test_acc:=0.392022
+epoch:=30800 ,test_acc:=0.397944
+epoch:=30900 ,test_acc:=0.390031
+epoch:=31000 ,test_acc:=0.384007
+epoch:=31100 ,test_acc:=0.411545
+epoch:=31200 ,test_acc:=0.378492 ModelSave!
+epoch:=31300 ,test_acc:=0.376683 ModelSave!
+epoch:=31400 ,test_acc:=0.378821
+epoch:=31500 ,test_acc:=0.377552
+epoch:=31600 ,test_acc:=0.376354 ModelSave!
+epoch:=31700 ,test_acc:=0.390625
+epoch:=31800 ,test_acc:=0.374244 ModelSave!
+epoch:=31900 ,test_acc:=0.392733
+epoch:=32000 ,test_acc:=0.373883 ModelSave!
+epoch:=32100 ,test_acc:=0.377618
+epoch:=32200 ,test_acc:=0.373162 ModelSave!
+epoch:=32300 ,test_acc:=0.368350 ModelSave!
+epoch:=32400 ,test_acc:=0.378399
+epoch:=32500 ,test_acc:=0.373401
+epoch:=32600 ,test_acc:=0.373284
+epoch:=32700 ,test_acc:=0.369748
+epoch:=32800 ,test_acc:=0.367089 ModelSave!
+epoch:=32900 ,test_acc:=0.375636
+epoch:=33000 ,test_acc:=0.364041 ModelSave!
+epoch:=33100 ,test_acc:=0.369760
+epoch:=33200 ,test_acc:=0.377104
+epoch:=33300 ,test_acc:=0.377348
+epoch:=33400 ,test_acc:=0.384458
+epoch:=33500 ,test_acc:=0.364032 ModelSave!
+epoch:=33600 ,test_acc:=0.361507 ModelSave!
+epoch:=33700 ,test_acc:=0.360459 ModelSave!
+epoch:=33800 ,test_acc:=0.365071
+epoch:=33900 ,test_acc:=0.370023
+epoch:=34000 ,test_acc:=0.362755
+epoch:=34100 ,test_acc:=0.355463 ModelSave!
+epoch:=34200 ,test_acc:=0.358714
+epoch:=34300 ,test_acc:=0.359018
+epoch:=34400 ,test_acc:=0.389605
+epoch:=34500 ,test_acc:=0.354105 ModelSave!
+epoch:=34600 ,test_acc:=0.374909
+epoch:=34700 ,test_acc:=0.369531
+epoch:=34800 ,test_acc:=0.354302
+epoch:=34900 ,test_acc:=0.394044
+epoch:=35000 ,test_acc:=0.364753
+epoch:=35100 ,test_acc:=0.356115
+epoch:=35200 ,test_acc:=0.360289
+epoch:=35300 ,test_acc:=0.373777
+epoch:=35400 ,test_acc:=0.355688
+epoch:=35500 ,test_acc:=0.363348
+epoch:=35600 ,test_acc:=0.359259
+epoch:=35700 ,test_acc:=0.357826
+epoch:=35800 ,test_acc:=0.355522
+epoch:=35900 ,test_acc:=0.367035
+epoch:=36000 ,test_acc:=0.383852
+epoch:=36100 ,test_acc:=0.349879 ModelSave!
+epoch:=36200 ,test_acc:=0.375179
+epoch:=36300 ,test_acc:=0.349764 ModelSave!
+epoch:=36400 ,test_acc:=0.348248 ModelSave!
+epoch:=36500 ,test_acc:=0.345345 ModelSave!
+epoch:=36600 ,test_acc:=0.379851
+epoch:=36700 ,test_acc:=0.353307
+epoch:=36800 ,test_acc:=0.348659
+epoch:=36900 ,test_acc:=0.350173
+epoch:=37000 ,test_acc:=0.363124
+epoch:=37100 ,test_acc:=0.349385
+epoch:=37200 ,test_acc:=0.345273 ModelSave!
+epoch:=37300 ,test_acc:=0.344074 ModelSave!
+epoch:=37400 ,test_acc:=0.342951 ModelSave!
+epoch:=37500 ,test_acc:=0.349016
+epoch:=37600 ,test_acc:=0.351294
+epoch:=37700 ,test_acc:=0.352928
+epoch:=37800 ,test_acc:=0.345889
+epoch:=37900 ,test_acc:=0.358663
+epoch:=38000 ,test_acc:=0.346212
+epoch:=38100 ,test_acc:=0.348701
+epoch:=38200 ,test_acc:=0.347872
+epoch:=38300 ,test_acc:=0.350784
+epoch:=38400 ,test_acc:=0.359069
+epoch:=38500 ,test_acc:=0.371335
+epoch:=38600 ,test_acc:=0.353818
+epoch:=38700 ,test_acc:=0.355974
+epoch:=38800 ,test_acc:=0.343660
+epoch:=38900 ,test_acc:=0.342302 ModelSave!
+epoch:=39000 ,test_acc:=0.359966
+epoch:=39100 ,test_acc:=0.347362
+epoch:=39200 ,test_acc:=0.358566
+epoch:=39300 ,test_acc:=0.340695 ModelSave!
+epoch:=39400 ,test_acc:=0.340891
+epoch:=39500 ,test_acc:=0.338497 ModelSave!
+epoch:=39600 ,test_acc:=0.354390
+epoch:=39700 ,test_acc:=0.344164
+epoch:=39800 ,test_acc:=0.344557
+epoch:=39900 ,test_acc:=0.341843
+epoch:=40000 ,test_acc:=0.340577
+epoch:=40100 ,test_acc:=0.340351
+epoch:=40200 ,test_acc:=0.340943
+epoch:=40300 ,test_acc:=0.337158 ModelSave!
+epoch:=40400 ,test_acc:=0.335231 ModelSave!
+epoch:=40500 ,test_acc:=0.347229
+epoch:=40600 ,test_acc:=0.336738
+epoch:=40700 ,test_acc:=0.349556
+epoch:=40800 ,test_acc:=0.336162
+epoch:=40900 ,test_acc:=0.347382
+epoch:=41000 ,test_acc:=0.344582
+epoch:=41100 ,test_acc:=0.343579
+epoch:=41200 ,test_acc:=0.338797
+epoch:=41300 ,test_acc:=0.342582
+epoch:=41400 ,test_acc:=0.340504
+epoch:=41500 ,test_acc:=0.338679
+epoch:=41600 ,test_acc:=0.330160 ModelSave!
+epoch:=41700 ,test_acc:=0.329320 ModelSave!
+epoch:=41800 ,test_acc:=0.329629
+epoch:=41900 ,test_acc:=0.340983
+epoch:=42000 ,test_acc:=0.339290
+epoch:=42100 ,test_acc:=0.347000
+epoch:=42200 ,test_acc:=0.335894
+epoch:=42300 ,test_acc:=0.330882
+epoch:=42400 ,test_acc:=0.343030
+epoch:=42500 ,test_acc:=0.340876
+epoch:=42600 ,test_acc:=0.339863
+epoch:=42700 ,test_acc:=0.327110 ModelSave!
+epoch:=42800 ,test_acc:=0.327890
+epoch:=42900 ,test_acc:=0.338863
+epoch:=43000 ,test_acc:=0.340071
+epoch:=43100 ,test_acc:=0.324805 ModelSave!
+epoch:=43200 ,test_acc:=0.325809
+epoch:=43300 ,test_acc:=0.343800
+epoch:=43400 ,test_acc:=0.327077
+epoch:=43500 ,test_acc:=0.321181 ModelSave!
+epoch:=43600 ,test_acc:=0.343098
+epoch:=43700 ,test_acc:=0.325870
+epoch:=43800 ,test_acc:=0.323309
+epoch:=43900 ,test_acc:=0.326412
+epoch:=44000 ,test_acc:=0.319041 ModelSave!
+epoch:=44100 ,test_acc:=0.331868
+epoch:=44200 ,test_acc:=0.316793 ModelSave!
+epoch:=44300 ,test_acc:=0.319774
+epoch:=44400 ,test_acc:=0.316760 ModelSave!
+epoch:=44500 ,test_acc:=0.318905
+epoch:=44600 ,test_acc:=0.319003
+epoch:=44700 ,test_acc:=0.344228
+epoch:=44800 ,test_acc:=0.309951 ModelSave!
+epoch:=44900 ,test_acc:=0.311970
+epoch:=45000 ,test_acc:=0.316771
+epoch:=45100 ,test_acc:=0.310605
+epoch:=45200 ,test_acc:=0.313833
+epoch:=45300 ,test_acc:=0.315228
+epoch:=45400 ,test_acc:=0.316033
+epoch:=45500 ,test_acc:=0.307195 ModelSave!
+epoch:=45600 ,test_acc:=0.306950 ModelSave!
+epoch:=45700 ,test_acc:=0.304272 ModelSave!
+epoch:=45800 ,test_acc:=0.311005
+epoch:=45900 ,test_acc:=0.308169
+epoch:=46000 ,test_acc:=0.308791
+epoch:=46100 ,test_acc:=0.307356
+epoch:=46200 ,test_acc:=0.308501
+epoch:=46300 ,test_acc:=0.313940
+epoch:=46400 ,test_acc:=0.305801
+epoch:=46500 ,test_acc:=0.307117
+epoch:=46600 ,test_acc:=0.312566
+epoch:=46700 ,test_acc:=0.309730
+epoch:=46800 ,test_acc:=0.301188 ModelSave!
+epoch:=46900 ,test_acc:=0.318115
+epoch:=47000 ,test_acc:=0.301111 ModelSave!
+epoch:=47100 ,test_acc:=0.311386
+epoch:=47200 ,test_acc:=0.306457
+epoch:=47300 ,test_acc:=0.297704 ModelSave!
+epoch:=47400 ,test_acc:=0.301956
+epoch:=47500 ,test_acc:=0.303936
+epoch:=47600 ,test_acc:=0.300128
+epoch:=47700 ,test_acc:=0.299437
+epoch:=47800 ,test_acc:=0.304924
+epoch:=47900 ,test_acc:=0.296800 ModelSave!
+epoch:=48000 ,test_acc:=0.299111
+epoch:=48100 ,test_acc:=0.322519
+epoch:=48200 ,test_acc:=0.300344
+epoch:=48300 ,test_acc:=0.304122
+epoch:=48400 ,test_acc:=0.298228
+epoch:=48500 ,test_acc:=0.303568
+epoch:=48600 ,test_acc:=0.300137
+epoch:=48700 ,test_acc:=0.302408
+epoch:=48800 ,test_acc:=0.312742
+epoch:=48900 ,test_acc:=0.307372
+epoch:=49000 ,test_acc:=0.292130 ModelSave!
+epoch:=49100 ,test_acc:=0.299150
+epoch:=49200 ,test_acc:=0.305317
+epoch:=49300 ,test_acc:=0.295795
+epoch:=49400 ,test_acc:=0.301396
+epoch:=49500 ,test_acc:=0.298606
+epoch:=49600 ,test_acc:=0.298652
+epoch:=49700 ,test_acc:=0.327101
+epoch:=49800 ,test_acc:=0.299814
+epoch:=49900 ,test_acc:=0.292950
+epoch:=50000 ,test_acc:=0.293946
+epoch:=50100 ,test_acc:=0.298214
+epoch:=50200 ,test_acc:=0.299413
+epoch:=50300 ,test_acc:=0.303458
+epoch:=50400 ,test_acc:=0.293747
+epoch:=50500 ,test_acc:=0.310539
+epoch:=50600 ,test_acc:=0.319564
+epoch:=50700 ,test_acc:=0.309496
+epoch:=50800 ,test_acc:=0.303192
+epoch:=50900 ,test_acc:=0.296862
+epoch:=51000 ,test_acc:=0.300113
+epoch:=51100 ,test_acc:=0.292634
+epoch:=51200 ,test_acc:=0.318798
+epoch:=51300 ,test_acc:=0.294982
+epoch:=51400 ,test_acc:=0.297840
+epoch:=51500 ,test_acc:=0.289910 ModelSave!
+epoch:=51600 ,test_acc:=0.289532 ModelSave!
+epoch:=51700 ,test_acc:=0.301518
+epoch:=51800 ,test_acc:=0.302086
+epoch:=51900 ,test_acc:=0.303588
+epoch:=52000 ,test_acc:=0.288982 ModelSave!
+epoch:=52100 ,test_acc:=0.301385
+epoch:=52200 ,test_acc:=0.284900 ModelSave!
+epoch:=52300 ,test_acc:=0.290301
+epoch:=52400 ,test_acc:=0.294165
+epoch:=52500 ,test_acc:=0.291851
+epoch:=52600 ,test_acc:=0.293628
+epoch:=52700 ,test_acc:=0.289655
+epoch:=52800 ,test_acc:=0.295744
+epoch:=52900 ,test_acc:=0.285818
+epoch:=53000 ,test_acc:=0.282069 ModelSave!
+epoch:=53100 ,test_acc:=0.293578
+epoch:=53200 ,test_acc:=0.288566
+epoch:=53300 ,test_acc:=0.284971
+epoch:=53400 ,test_acc:=0.284365
+epoch:=53500 ,test_acc:=0.286561
+epoch:=53600 ,test_acc:=0.294679
+epoch:=53700 ,test_acc:=0.287831
+epoch:=53800 ,test_acc:=0.296825
+epoch:=53900 ,test_acc:=0.286920
+epoch:=54000 ,test_acc:=0.286360
+epoch:=54100 ,test_acc:=0.284561
+epoch:=54200 ,test_acc:=0.286873
+epoch:=54300 ,test_acc:=0.306220
+epoch:=54400 ,test_acc:=0.282995
+epoch:=54500 ,test_acc:=0.279872 ModelSave!
+epoch:=54600 ,test_acc:=0.286164
+epoch:=54700 ,test_acc:=0.282142
+epoch:=54800 ,test_acc:=0.276330 ModelSave!
+epoch:=54900 ,test_acc:=0.283527
+epoch:=55000 ,test_acc:=0.285207
+epoch:=55100 ,test_acc:=0.279159
+epoch:=55200 ,test_acc:=0.285448
+epoch:=55300 ,test_acc:=0.276668
+epoch:=55400 ,test_acc:=0.292810
+epoch:=55500 ,test_acc:=0.281411
+epoch:=55600 ,test_acc:=0.289998
+epoch:=55700 ,test_acc:=0.280630
+epoch:=55800 ,test_acc:=0.299508
+epoch:=55900 ,test_acc:=0.273860 ModelSave!
+epoch:=56000 ,test_acc:=0.277848
+epoch:=56100 ,test_acc:=0.272910 ModelSave!
+epoch:=56200 ,test_acc:=0.274943
+epoch:=56300 ,test_acc:=0.272027 ModelSave!
+epoch:=56400 ,test_acc:=0.278197
+epoch:=56500 ,test_acc:=0.295162
+epoch:=56600 ,test_acc:=0.289632
+epoch:=56700 ,test_acc:=0.274160
+epoch:=56800 ,test_acc:=0.267102 ModelSave!
+epoch:=56900 ,test_acc:=0.285831
+epoch:=57000 ,test_acc:=0.276263
+epoch:=57100 ,test_acc:=0.278457
+epoch:=57200 ,test_acc:=0.270111
+epoch:=57300 ,test_acc:=0.270403
+epoch:=57400 ,test_acc:=0.273769
+epoch:=57500 ,test_acc:=0.266668 ModelSave!
+epoch:=57600 ,test_acc:=0.284649
+epoch:=57700 ,test_acc:=0.275923
+epoch:=57800 ,test_acc:=0.269759
+epoch:=57900 ,test_acc:=0.290689
+epoch:=58000 ,test_acc:=0.281658
+epoch:=58100 ,test_acc:=0.267929
+epoch:=58200 ,test_acc:=0.268275
+epoch:=58300 ,test_acc:=0.273904
+epoch:=58400 ,test_acc:=0.263391 ModelSave!
+epoch:=58500 ,test_acc:=0.270019
+epoch:=58600 ,test_acc:=0.265226
+epoch:=58700 ,test_acc:=0.283043
+epoch:=58800 ,test_acc:=0.263149 ModelSave!
+epoch:=58900 ,test_acc:=0.274060
+epoch:=59000 ,test_acc:=0.274400
+epoch:=59100 ,test_acc:=0.265410
+epoch:=59200 ,test_acc:=0.258815 ModelSave!
+epoch:=59300 ,test_acc:=0.263441
+epoch:=59400 ,test_acc:=0.259494
+epoch:=59500 ,test_acc:=0.266972
+epoch:=59600 ,test_acc:=0.262070
+epoch:=59700 ,test_acc:=0.269942
+epoch:=59800 ,test_acc:=0.278201
+epoch:=59900 ,test_acc:=0.293170
+epoch:=60000 ,test_acc:=0.269605
+epoch:=60100 ,test_acc:=0.262146
+epoch:=60200 ,test_acc:=0.255869 ModelSave!
+epoch:=60300 ,test_acc:=0.268902
+epoch:=60400 ,test_acc:=0.264983
+epoch:=60500 ,test_acc:=0.267480
+epoch:=60600 ,test_acc:=0.263638
+epoch:=60700 ,test_acc:=0.259344
+epoch:=60800 ,test_acc:=0.263410
+epoch:=60900 ,test_acc:=0.259745
+epoch:=61000 ,test_acc:=0.252884 ModelSave!
+epoch:=61100 ,test_acc:=0.270566
+epoch:=61200 ,test_acc:=0.259838
+epoch:=61300 ,test_acc:=0.251499 ModelSave!
+epoch:=61400 ,test_acc:=0.299967
+epoch:=61500 ,test_acc:=0.266158
+epoch:=61600 ,test_acc:=0.254318
+epoch:=61700 ,test_acc:=0.256932
+epoch:=61800 ,test_acc:=0.253699
+epoch:=61900 ,test_acc:=0.250362 ModelSave!
+epoch:=62000 ,test_acc:=0.253579
+epoch:=62100 ,test_acc:=0.259530
+epoch:=62200 ,test_acc:=0.262027
+epoch:=62300 ,test_acc:=0.276933
+epoch:=62400 ,test_acc:=0.262118
+epoch:=62500 ,test_acc:=0.246496 ModelSave!
+epoch:=62600 ,test_acc:=0.258982
+epoch:=62700 ,test_acc:=0.247327
+epoch:=62800 ,test_acc:=0.251424
+epoch:=62900 ,test_acc:=0.251175
+epoch:=63000 ,test_acc:=0.248065
+epoch:=63100 ,test_acc:=0.255057
+epoch:=63200 ,test_acc:=0.249525
+epoch:=63300 ,test_acc:=0.245932 ModelSave!
+epoch:=63400 ,test_acc:=0.270284
+epoch:=63500 ,test_acc:=0.251555
+epoch:=63600 ,test_acc:=0.260322
+epoch:=63700 ,test_acc:=0.247964
+epoch:=63800 ,test_acc:=0.249905
+epoch:=63900 ,test_acc:=0.247902
+epoch:=64000 ,test_acc:=0.266060
+epoch:=64100 ,test_acc:=0.265028
+epoch:=64200 ,test_acc:=0.249174
+epoch:=64300 ,test_acc:=0.247680
+epoch:=64400 ,test_acc:=0.254824
+epoch:=64500 ,test_acc:=0.250945
+epoch:=64600 ,test_acc:=0.252846
+epoch:=64700 ,test_acc:=0.247964
+epoch:=64800 ,test_acc:=0.247679
+epoch:=64900 ,test_acc:=0.245392 ModelSave!
+epoch:=65000 ,test_acc:=0.274001
+epoch:=65100 ,test_acc:=0.247922
+epoch:=65200 ,test_acc:=0.249046
+epoch:=65300 ,test_acc:=0.244173 ModelSave!
+epoch:=65400 ,test_acc:=0.251447
+epoch:=65500 ,test_acc:=0.253948
+epoch:=65600 ,test_acc:=0.245103
+epoch:=65700 ,test_acc:=0.262340
+epoch:=65800 ,test_acc:=0.250659
+epoch:=65900 ,test_acc:=0.242337 ModelSave!
+epoch:=66000 ,test_acc:=0.247012
+epoch:=66100 ,test_acc:=0.251834
+epoch:=66200 ,test_acc:=0.261523
+epoch:=66300 ,test_acc:=0.253280
+epoch:=66400 ,test_acc:=0.241264 ModelSave!
+epoch:=66500 ,test_acc:=0.243684
+epoch:=66600 ,test_acc:=0.252832
+epoch:=66700 ,test_acc:=0.245577
+epoch:=66800 ,test_acc:=0.239701 ModelSave!
+epoch:=66900 ,test_acc:=0.251048
+epoch:=67000 ,test_acc:=0.238201 ModelSave!
+epoch:=67100 ,test_acc:=0.248621
+epoch:=67200 ,test_acc:=0.236711 ModelSave!
+epoch:=67300 ,test_acc:=0.242400
+epoch:=67400 ,test_acc:=0.244764
+epoch:=67500 ,test_acc:=0.238415
+epoch:=67600 ,test_acc:=0.241301
+epoch:=67700 ,test_acc:=0.237585
+epoch:=67800 ,test_acc:=0.240776
+epoch:=67900 ,test_acc:=0.237941
+epoch:=68000 ,test_acc:=0.251906
+epoch:=68100 ,test_acc:=0.241216
+epoch:=68200 ,test_acc:=0.246932
+epoch:=68300 ,test_acc:=0.246016
+epoch:=68400 ,test_acc:=0.243257
+epoch:=68500 ,test_acc:=0.234252 ModelSave!
+epoch:=68600 ,test_acc:=0.245948
+epoch:=68700 ,test_acc:=0.274086
+epoch:=68800 ,test_acc:=0.238628
+epoch:=68900 ,test_acc:=0.243395
+epoch:=69000 ,test_acc:=0.251832
+epoch:=69100 ,test_acc:=0.236862
+epoch:=69200 ,test_acc:=0.246037
+epoch:=69300 ,test_acc:=0.247849
+epoch:=69400 ,test_acc:=0.236041
+epoch:=69500 ,test_acc:=0.238546
+epoch:=69600 ,test_acc:=0.257974
+epoch:=69700 ,test_acc:=0.263133
+epoch:=69800 ,test_acc:=0.235761
+epoch:=69900 ,test_acc:=0.235570
+epoch:=70000 ,test_acc:=0.244118
+epoch:=70100 ,test_acc:=0.252460
+epoch:=70200 ,test_acc:=0.247392
+epoch:=70300 ,test_acc:=0.238667
+epoch:=70400 ,test_acc:=0.244223
+epoch:=70500 ,test_acc:=0.244276
+epoch:=70600 ,test_acc:=0.236970
+epoch:=70700 ,test_acc:=0.231420 ModelSave!
+epoch:=70800 ,test_acc:=0.243029
+epoch:=70900 ,test_acc:=0.240738
+epoch:=71000 ,test_acc:=0.251494
+epoch:=71100 ,test_acc:=0.233914
+epoch:=71200 ,test_acc:=0.237192
+epoch:=71300 ,test_acc:=0.236234
+epoch:=71400 ,test_acc:=0.242243
+epoch:=71500 ,test_acc:=0.232693
+epoch:=71600 ,test_acc:=0.239815
+epoch:=71700 ,test_acc:=0.239898
+epoch:=71800 ,test_acc:=0.241634
+epoch:=71900 ,test_acc:=0.233871
+epoch:=72000 ,test_acc:=0.239848
+epoch:=72100 ,test_acc:=0.239333
+epoch:=72200 ,test_acc:=0.233941
+epoch:=72300 ,test_acc:=0.245688
+epoch:=72400 ,test_acc:=0.232609
+epoch:=72500 ,test_acc:=0.241269
+epoch:=72600 ,test_acc:=0.243808
+epoch:=72700 ,test_acc:=0.282591
+epoch:=72800 ,test_acc:=0.237811
+epoch:=72900 ,test_acc:=0.235738
+epoch:=73000 ,test_acc:=0.241694
+epoch:=73100 ,test_acc:=0.242515
+epoch:=73200 ,test_acc:=0.260549
+epoch:=73300 ,test_acc:=0.268918
+epoch:=73400 ,test_acc:=0.237159
+epoch:=73500 ,test_acc:=0.240908
+epoch:=73600 ,test_acc:=0.248344
+epoch:=73700 ,test_acc:=0.236351
+epoch:=73800 ,test_acc:=0.235537
+epoch:=73900 ,test_acc:=0.232131
+epoch:=74000 ,test_acc:=0.248819
+epoch:=74100 ,test_acc:=0.235188
+epoch:=74200 ,test_acc:=0.248481
+epoch:=74300 ,test_acc:=0.229474 ModelSave!
+epoch:=74400 ,test_acc:=0.231123
+epoch:=74500 ,test_acc:=0.233439
+epoch:=74600 ,test_acc:=0.238985
+epoch:=74700 ,test_acc:=0.255749
+epoch:=74800 ,test_acc:=0.236188
+epoch:=74900 ,test_acc:=0.226254 ModelSave!
+epoch:=75000 ,test_acc:=0.237206
+epoch:=75100 ,test_acc:=0.237632
+epoch:=75200 ,test_acc:=0.228161
+epoch:=75300 ,test_acc:=0.241868
+epoch:=75400 ,test_acc:=0.235807
+epoch:=75500 ,test_acc:=0.229628
+epoch:=75600 ,test_acc:=0.235495
+epoch:=75700 ,test_acc:=0.250078
+epoch:=75800 ,test_acc:=0.240697
+epoch:=75900 ,test_acc:=0.235873
+epoch:=76000 ,test_acc:=0.238779
+epoch:=76100 ,test_acc:=0.228192
+epoch:=76200 ,test_acc:=0.232351
+epoch:=76300 ,test_acc:=0.239661
+epoch:=76400 ,test_acc:=0.222497 ModelSave!
+epoch:=76500 ,test_acc:=0.225667
+epoch:=76600 ,test_acc:=0.223246
+epoch:=76700 ,test_acc:=0.238665
+epoch:=76800 ,test_acc:=0.246307
+epoch:=76900 ,test_acc:=0.227729
+epoch:=77000 ,test_acc:=0.226952
+epoch:=77100 ,test_acc:=0.236494
+epoch:=77200 ,test_acc:=0.227460
+epoch:=77300 ,test_acc:=0.229240
+epoch:=77400 ,test_acc:=0.233074
+epoch:=77500 ,test_acc:=0.243828
+epoch:=77600 ,test_acc:=0.229063
+epoch:=77700 ,test_acc:=0.230421
+epoch:=77800 ,test_acc:=0.231620
+epoch:=77900 ,test_acc:=0.235347
+epoch:=78000 ,test_acc:=0.224497
+epoch:=78100 ,test_acc:=0.238432
+epoch:=78200 ,test_acc:=0.231877
+epoch:=78300 ,test_acc:=0.234582
+epoch:=78400 ,test_acc:=0.241839
+epoch:=78500 ,test_acc:=0.233831
+epoch:=78600 ,test_acc:=0.244896
+epoch:=78700 ,test_acc:=0.224450
+epoch:=78800 ,test_acc:=0.236048
+epoch:=78900 ,test_acc:=0.236875
+epoch:=79000 ,test_acc:=0.252277
+epoch:=79100 ,test_acc:=0.232564
+epoch:=79200 ,test_acc:=0.247007
+epoch:=79300 ,test_acc:=0.248004
+epoch:=79400 ,test_acc:=0.228086
+epoch:=79500 ,test_acc:=0.232045
+epoch:=79600 ,test_acc:=0.224857
+epoch:=79700 ,test_acc:=0.222706
+epoch:=79800 ,test_acc:=0.246603
+epoch:=79900 ,test_acc:=0.234538
+epoch:=80000 ,test_acc:=0.226594
+epoch:=80100 ,test_acc:=0.242660
+epoch:=80200 ,test_acc:=0.249777
+epoch:=80300 ,test_acc:=0.230641
+epoch:=80400 ,test_acc:=0.236431
+epoch:=80500 ,test_acc:=0.223956
+epoch:=80600 ,test_acc:=0.231955
+epoch:=80700 ,test_acc:=0.228534
+epoch:=80800 ,test_acc:=0.230432
+epoch:=80900 ,test_acc:=0.225607
+epoch:=81000 ,test_acc:=0.243847
+epoch:=81100 ,test_acc:=0.233178
+epoch:=81200 ,test_acc:=0.234769
+epoch:=81300 ,test_acc:=0.230879
+epoch:=81400 ,test_acc:=0.229962
+epoch:=81500 ,test_acc:=0.230797
+epoch:=81600 ,test_acc:=0.232115
+epoch:=81700 ,test_acc:=0.229842
+epoch:=81800 ,test_acc:=0.251485
+epoch:=81900 ,test_acc:=0.227337
+epoch:=82000 ,test_acc:=0.236213
+epoch:=82100 ,test_acc:=0.223469
+epoch:=82200 ,test_acc:=0.232739
+epoch:=82300 ,test_acc:=0.243194
+epoch:=82400 ,test_acc:=0.240473
+epoch:=82500 ,test_acc:=0.225570
+epoch:=82600 ,test_acc:=0.230822
+epoch:=82700 ,test_acc:=0.226089
+epoch:=82800 ,test_acc:=0.230456
+epoch:=82900 ,test_acc:=0.228550
+epoch:=83000 ,test_acc:=0.229671
+epoch:=83100 ,test_acc:=0.230356
+epoch:=83200 ,test_acc:=0.224672
+epoch:=83300 ,test_acc:=0.229423
+epoch:=83400 ,test_acc:=0.232304
+epoch:=83500 ,test_acc:=0.246975
+epoch:=83600 ,test_acc:=0.225353
+epoch:=83700 ,test_acc:=0.226639
+epoch:=83800 ,test_acc:=0.237412
+epoch:=83900 ,test_acc:=0.233837
+epoch:=84000 ,test_acc:=0.230981
+epoch:=84100 ,test_acc:=0.223596
+epoch:=84200 ,test_acc:=0.225894
+epoch:=84300 ,test_acc:=0.232090
+epoch:=84400 ,test_acc:=0.223859
+epoch:=84500 ,test_acc:=0.248316
+epoch:=84600 ,test_acc:=0.237413
+epoch:=84700 ,test_acc:=0.222563
+epoch:=84800 ,test_acc:=0.231501
+epoch:=84900 ,test_acc:=0.232012
+epoch:=85000 ,test_acc:=0.223726
+epoch:=85100 ,test_acc:=0.229390
+epoch:=85200 ,test_acc:=0.228443
+epoch:=85300 ,test_acc:=0.226248
+epoch:=85400 ,test_acc:=0.237199
+epoch:=85500 ,test_acc:=0.224639
+epoch:=85600 ,test_acc:=0.228761
+epoch:=85700 ,test_acc:=0.228941
+epoch:=85800 ,test_acc:=0.233985
+epoch:=85900 ,test_acc:=0.238716
+epoch:=86000 ,test_acc:=0.223362
+epoch:=86100 ,test_acc:=0.224162
+epoch:=86200 ,test_acc:=0.217445 ModelSave!
+epoch:=86300 ,test_acc:=0.223066
+epoch:=86400 ,test_acc:=0.232490
+epoch:=86500 ,test_acc:=0.220155
+epoch:=86600 ,test_acc:=0.228828
+epoch:=86700 ,test_acc:=0.237905
+epoch:=86800 ,test_acc:=0.266386
+epoch:=86900 ,test_acc:=0.239978
+epoch:=87000 ,test_acc:=0.223853
+epoch:=87100 ,test_acc:=0.223729
+epoch:=87200 ,test_acc:=0.232337
+epoch:=87300 ,test_acc:=0.239873
+epoch:=87400 ,test_acc:=0.223317
+epoch:=87500 ,test_acc:=0.227224
+epoch:=87600 ,test_acc:=0.226382
+epoch:=87700 ,test_acc:=0.233307
+epoch:=87800 ,test_acc:=0.227706
+epoch:=87900 ,test_acc:=0.232714
+epoch:=88000 ,test_acc:=0.221902
+epoch:=88100 ,test_acc:=0.229990
+epoch:=88200 ,test_acc:=0.254268
+epoch:=88300 ,test_acc:=0.222050
+epoch:=88400 ,test_acc:=0.233230
+epoch:=88500 ,test_acc:=0.244383
+epoch:=88600 ,test_acc:=0.228444
+epoch:=88700 ,test_acc:=0.221720
+epoch:=88800 ,test_acc:=0.231583
+epoch:=88900 ,test_acc:=0.229188
+epoch:=89000 ,test_acc:=0.239234
+epoch:=89100 ,test_acc:=0.227432
+epoch:=89200 ,test_acc:=0.228509
+epoch:=89300 ,test_acc:=0.247588
+epoch:=89400 ,test_acc:=0.217275 ModelSave!
+epoch:=89500 ,test_acc:=0.222521
+epoch:=89600 ,test_acc:=0.221393
+epoch:=89700 ,test_acc:=0.225864
+epoch:=89800 ,test_acc:=0.234103
+epoch:=89900 ,test_acc:=0.242453
+epoch:=90000 ,test_acc:=0.232906
+epoch:=90100 ,test_acc:=0.222342
+epoch:=90200 ,test_acc:=0.228204
+epoch:=90300 ,test_acc:=0.221221
+epoch:=90400 ,test_acc:=0.239398
+epoch:=90500 ,test_acc:=0.232728
+epoch:=90600 ,test_acc:=0.227352
+epoch:=90700 ,test_acc:=0.219867
+epoch:=90800 ,test_acc:=0.231880
+epoch:=90900 ,test_acc:=0.240257
+epoch:=91000 ,test_acc:=0.229698
+epoch:=91100 ,test_acc:=0.228654
+epoch:=91200 ,test_acc:=0.235693
+epoch:=91300 ,test_acc:=0.220352
+epoch:=91400 ,test_acc:=0.238246
+epoch:=91500 ,test_acc:=0.237920
+epoch:=91600 ,test_acc:=0.229615
+epoch:=91700 ,test_acc:=0.225495
+epoch:=91800 ,test_acc:=0.224522
+epoch:=91900 ,test_acc:=0.234101
+epoch:=92000 ,test_acc:=0.239084
+epoch:=92100 ,test_acc:=0.234091
+epoch:=92200 ,test_acc:=0.222983
+epoch:=92300 ,test_acc:=0.228512
+epoch:=92400 ,test_acc:=0.236479
+epoch:=92500 ,test_acc:=0.224944
+epoch:=92600 ,test_acc:=0.220956
+epoch:=92700 ,test_acc:=0.225441
+epoch:=92800 ,test_acc:=0.230159
+epoch:=92900 ,test_acc:=0.233263
+epoch:=93000 ,test_acc:=0.229766
+epoch:=93100 ,test_acc:=0.220622
+epoch:=93200 ,test_acc:=0.225162
+epoch:=93300 ,test_acc:=0.229759
+epoch:=93400 ,test_acc:=0.226388
+epoch:=93500 ,test_acc:=0.219037
+epoch:=93600 ,test_acc:=0.244258
+epoch:=93700 ,test_acc:=0.219774
+epoch:=93800 ,test_acc:=0.223818
+epoch:=93900 ,test_acc:=0.219489
+epoch:=94000 ,test_acc:=0.226500
+epoch:=94100 ,test_acc:=0.231451
+epoch:=94200 ,test_acc:=0.234991
+epoch:=94300 ,test_acc:=0.231599
+epoch:=94400 ,test_acc:=0.239737
+epoch:=94500 ,test_acc:=0.236818
+epoch:=94600 ,test_acc:=0.235130
+epoch:=94700 ,test_acc:=0.225099
+epoch:=94800 ,test_acc:=0.230385
+epoch:=94900 ,test_acc:=0.223083
+epoch:=95000 ,test_acc:=0.234352
+epoch:=95100 ,test_acc:=0.224062
+epoch:=95200 ,test_acc:=0.237598
+epoch:=95300 ,test_acc:=0.233504
+epoch:=95400 ,test_acc:=0.221119
+epoch:=95500 ,test_acc:=0.220926
+epoch:=95600 ,test_acc:=0.234160
+epoch:=95700 ,test_acc:=0.224398
+epoch:=95800 ,test_acc:=0.232376
+epoch:=95900 ,test_acc:=0.225731
+epoch:=96000 ,test_acc:=0.224294
+epoch:=96100 ,test_acc:=0.232129
+epoch:=96200 ,test_acc:=0.235069
+epoch:=96300 ,test_acc:=0.220325
+epoch:=96400 ,test_acc:=0.226366
+epoch:=96500 ,test_acc:=0.229056
+epoch:=96600 ,test_acc:=0.232310
+epoch:=96700 ,test_acc:=0.222621
+epoch:=96800 ,test_acc:=0.227281
+epoch:=96900 ,test_acc:=0.227580
+epoch:=97000 ,test_acc:=0.234660
+epoch:=97100 ,test_acc:=0.234261
+epoch:=97200 ,test_acc:=0.245151
+epoch:=97300 ,test_acc:=0.251078
+epoch:=97400 ,test_acc:=0.222537
+epoch:=97500 ,test_acc:=0.228339
+epoch:=97600 ,test_acc:=0.229831
+epoch:=97700 ,test_acc:=0.222259
+epoch:=97800 ,test_acc:=0.232216
+epoch:=97900 ,test_acc:=0.225071
+epoch:=98000 ,test_acc:=0.228219
+epoch:=98100 ,test_acc:=0.224310
+epoch:=98200 ,test_acc:=0.222167
+epoch:=98300 ,test_acc:=0.227768
+epoch:=98400 ,test_acc:=0.224876
+epoch:=98500 ,test_acc:=0.222960
+epoch:=98600 ,test_acc:=0.238902
+epoch:=98700 ,test_acc:=0.226849
+epoch:=98800 ,test_acc:=0.234682
+epoch:=98900 ,test_acc:=0.237947
+epoch:=99000 ,test_acc:=0.222828
+epoch:=99100 ,test_acc:=0.221804
+epoch:=99200 ,test_acc:=0.225248
+epoch:=99300 ,test_acc:=0.242562
+epoch:=99400 ,test_acc:=0.225042
+epoch:=99500 ,test_acc:=0.234584
+epoch:=99600 ,test_acc:=0.240718
+epoch:=99700 ,test_acc:=0.229124
+epoch:=99800 ,test_acc:=0.244274
+epoch:=99900 ,test_acc:=0.227331
+epoch:=100000 ,test_acc:=0.224351
+epoch:=100100 ,test_acc:=0.235074
+epoch:=100200 ,test_acc:=0.226512
+epoch:=100300 ,test_acc:=0.224971
+epoch:=100400 ,test_acc:=0.223672
+epoch:=100500 ,test_acc:=0.225288
+epoch:=100600 ,test_acc:=0.232428
+epoch:=100700 ,test_acc:=0.221968
+epoch:=100800 ,test_acc:=0.231217
+epoch:=100900 ,test_acc:=0.235240
+epoch:=101000 ,test_acc:=0.231433
+epoch:=101100 ,test_acc:=0.227427
+epoch:=101200 ,test_acc:=0.246316
+epoch:=101300 ,test_acc:=0.224016
+epoch:=101400 ,test_acc:=0.240756
+epoch:=101500 ,test_acc:=0.233376
+epoch:=101600 ,test_acc:=0.227171
+epoch:=101700 ,test_acc:=0.223402
+epoch:=101800 ,test_acc:=0.249662
+epoch:=101900 ,test_acc:=0.272636
+epoch:=102000 ,test_acc:=0.233384
+epoch:=102100 ,test_acc:=0.239586
+epoch:=102200 ,test_acc:=0.250344
+epoch:=102300 ,test_acc:=0.235410
+epoch:=102400 ,test_acc:=0.234959
+epoch:=102500 ,test_acc:=0.230541
+epoch:=102600 ,test_acc:=0.224563
+epoch:=102700 ,test_acc:=0.228462
+epoch:=102800 ,test_acc:=0.238579
+epoch:=102900 ,test_acc:=0.222594
+epoch:=103000 ,test_acc:=0.220045
+epoch:=103100 ,test_acc:=0.224165
+epoch:=103200 ,test_acc:=0.218722
+epoch:=103300 ,test_acc:=0.220874
+epoch:=103400 ,test_acc:=0.227739
+epoch:=103500 ,test_acc:=0.237098
+epoch:=103600 ,test_acc:=0.231434
+epoch:=103700 ,test_acc:=0.237088
+epoch:=103800 ,test_acc:=0.231182
+epoch:=103900 ,test_acc:=0.218570
+epoch:=104000 ,test_acc:=0.222780
+epoch:=104100 ,test_acc:=0.221990
+epoch:=104200 ,test_acc:=0.226409
+epoch:=104300 ,test_acc:=0.235080
+epoch:=104400 ,test_acc:=0.225552
+epoch:=104500 ,test_acc:=0.221349
+epoch:=104600 ,test_acc:=0.221185
+epoch:=104700 ,test_acc:=0.220874
+epoch:=104800 ,test_acc:=0.235704
+epoch:=104900 ,test_acc:=0.229561
+epoch:=105000 ,test_acc:=0.225226
+epoch:=105100 ,test_acc:=0.259649
+epoch:=105200 ,test_acc:=0.242142
+epoch:=105300 ,test_acc:=0.223815
+epoch:=105400 ,test_acc:=0.227659
+epoch:=105500 ,test_acc:=0.220477
+epoch:=105600 ,test_acc:=0.219023
+epoch:=105700 ,test_acc:=0.226588
+epoch:=105800 ,test_acc:=0.247544
+epoch:=105900 ,test_acc:=0.240014
+epoch:=106000 ,test_acc:=0.230473
+epoch:=106100 ,test_acc:=0.216576 ModelSave!
+epoch:=106200 ,test_acc:=0.227087
+epoch:=106300 ,test_acc:=0.222593
+epoch:=106400 ,test_acc:=0.218621
+epoch:=106500 ,test_acc:=0.220497
+epoch:=106600 ,test_acc:=0.217702
+epoch:=106700 ,test_acc:=0.226183
+epoch:=106800 ,test_acc:=0.236462
+epoch:=106900 ,test_acc:=0.225612
+epoch:=107000 ,test_acc:=0.228439
+epoch:=107100 ,test_acc:=0.225854
+epoch:=107200 ,test_acc:=0.231218
+epoch:=107300 ,test_acc:=0.226485
+epoch:=107400 ,test_acc:=0.226674
+epoch:=107500 ,test_acc:=0.233542
+epoch:=107600 ,test_acc:=0.221374
+epoch:=107700 ,test_acc:=0.223810
+epoch:=107800 ,test_acc:=0.222713
+epoch:=107900 ,test_acc:=0.236955
+epoch:=108000 ,test_acc:=0.224471
+epoch:=108100 ,test_acc:=0.228374
+epoch:=108200 ,test_acc:=0.226037
+epoch:=108300 ,test_acc:=0.223319
+epoch:=108400 ,test_acc:=0.226814
+epoch:=108500 ,test_acc:=0.227016
+epoch:=108600 ,test_acc:=0.229732
+epoch:=108700 ,test_acc:=0.230197
+epoch:=108800 ,test_acc:=0.245115
+epoch:=108900 ,test_acc:=0.230828
+epoch:=109000 ,test_acc:=0.234711
+epoch:=109100 ,test_acc:=0.218496
+epoch:=109200 ,test_acc:=0.220683
+epoch:=109300 ,test_acc:=0.224894
+epoch:=109400 ,test_acc:=0.220945
+epoch:=109500 ,test_acc:=0.219359
+epoch:=109600 ,test_acc:=0.224567
+epoch:=109700 ,test_acc:=0.220370
+epoch:=109800 ,test_acc:=0.224407
+epoch:=109900 ,test_acc:=0.227288
+epoch:=110000 ,test_acc:=0.234113
+epoch:=110100 ,test_acc:=0.223702
+epoch:=110200 ,test_acc:=0.241393
+epoch:=110300 ,test_acc:=0.225591
+epoch:=110400 ,test_acc:=0.224325
+epoch:=110500 ,test_acc:=0.222645
+epoch:=110600 ,test_acc:=0.226808
+epoch:=110700 ,test_acc:=0.222298
+epoch:=110800 ,test_acc:=0.218460
+epoch:=110900 ,test_acc:=0.224408
+epoch:=111000 ,test_acc:=0.222631
+epoch:=111100 ,test_acc:=0.225953
+epoch:=111200 ,test_acc:=0.230257
+epoch:=111300 ,test_acc:=0.226277
+epoch:=111400 ,test_acc:=0.220542
+epoch:=111500 ,test_acc:=0.219390
+epoch:=111600 ,test_acc:=0.217948
+epoch:=111700 ,test_acc:=0.229373
+epoch:=111800 ,test_acc:=0.219925
+epoch:=111900 ,test_acc:=0.224609
+epoch:=112000 ,test_acc:=0.231961
+epoch:=112100 ,test_acc:=0.224970
+epoch:=112200 ,test_acc:=0.221244
+epoch:=112300 ,test_acc:=0.224040
+epoch:=112400 ,test_acc:=0.230580
+epoch:=112500 ,test_acc:=0.220978
+epoch:=112600 ,test_acc:=0.221732
+epoch:=112700 ,test_acc:=0.221670
+epoch:=112800 ,test_acc:=0.228062
+epoch:=112900 ,test_acc:=0.234003
+epoch:=113000 ,test_acc:=0.233263
+epoch:=113100 ,test_acc:=0.221766
+epoch:=113200 ,test_acc:=0.226940
+epoch:=113300 ,test_acc:=0.221275
+epoch:=113400 ,test_acc:=0.230954
+epoch:=113500 ,test_acc:=0.226401
+epoch:=113600 ,test_acc:=0.221041
+epoch:=113700 ,test_acc:=0.239640
+epoch:=113800 ,test_acc:=0.221924
+epoch:=113900 ,test_acc:=0.223734
+epoch:=114000 ,test_acc:=0.232062
+epoch:=114100 ,test_acc:=0.220045
+epoch:=114200 ,test_acc:=0.224605
+epoch:=114300 ,test_acc:=0.222825
+epoch:=114400 ,test_acc:=0.219222
+epoch:=114500 ,test_acc:=0.231816
+epoch:=114600 ,test_acc:=0.217299
+epoch:=114700 ,test_acc:=0.219025
+epoch:=114800 ,test_acc:=0.216134 ModelSave!
+epoch:=114900 ,test_acc:=0.223604
+epoch:=115000 ,test_acc:=0.222788
+epoch:=115100 ,test_acc:=0.230594
+epoch:=115200 ,test_acc:=0.246533
+epoch:=115300 ,test_acc:=0.226260
+epoch:=115400 ,test_acc:=0.217498
+epoch:=115500 ,test_acc:=0.216150
+epoch:=115600 ,test_acc:=0.218809
+epoch:=115700 ,test_acc:=0.218186
+epoch:=115800 ,test_acc:=0.220405
+epoch:=115900 ,test_acc:=0.217221
+epoch:=116000 ,test_acc:=0.220010
+epoch:=116100 ,test_acc:=0.236962
+epoch:=116200 ,test_acc:=0.224044
+epoch:=116300 ,test_acc:=0.233254
+epoch:=116400 ,test_acc:=0.222711
+epoch:=116500 ,test_acc:=0.226163
+epoch:=116600 ,test_acc:=0.225660
+epoch:=116700 ,test_acc:=0.226839
+epoch:=116800 ,test_acc:=0.219633
+epoch:=116900 ,test_acc:=0.233676
+epoch:=117000 ,test_acc:=0.220059
+epoch:=117100 ,test_acc:=0.221298
+epoch:=117200 ,test_acc:=0.215640 ModelSave!
+epoch:=117300 ,test_acc:=0.229803
+epoch:=117400 ,test_acc:=0.225009
+epoch:=117500 ,test_acc:=0.251206
+epoch:=117600 ,test_acc:=0.220376
+epoch:=117700 ,test_acc:=0.232492
+epoch:=117800 ,test_acc:=0.233013
+epoch:=117900 ,test_acc:=0.217641
+epoch:=118000 ,test_acc:=0.226455
+epoch:=118100 ,test_acc:=0.235682
+epoch:=118200 ,test_acc:=0.227408
+epoch:=118300 ,test_acc:=0.241904
+epoch:=118400 ,test_acc:=0.233804
+epoch:=118500 ,test_acc:=0.217844
+epoch:=118600 ,test_acc:=0.217223
+epoch:=118700 ,test_acc:=0.229820
+epoch:=118800 ,test_acc:=0.218190
+epoch:=118900 ,test_acc:=0.221178
+epoch:=119000 ,test_acc:=0.228247
+epoch:=119100 ,test_acc:=0.242601
+epoch:=119200 ,test_acc:=0.218803
+epoch:=119300 ,test_acc:=0.225153
+epoch:=119400 ,test_acc:=0.225677
+epoch:=119500 ,test_acc:=0.225954
+epoch:=119600 ,test_acc:=0.228239
+epoch:=119700 ,test_acc:=0.227256
+epoch:=119800 ,test_acc:=0.228475
+epoch:=119900 ,test_acc:=0.219088
+epoch:=120000 ,test_acc:=0.221195
+epoch:=120100 ,test_acc:=0.262030
+epoch:=120200 ,test_acc:=0.217728
+epoch:=120300 ,test_acc:=0.217722
+epoch:=120400 ,test_acc:=0.224815
+epoch:=120500 ,test_acc:=0.220237
+epoch:=120600 ,test_acc:=0.229206
+epoch:=120700 ,test_acc:=0.226092
+epoch:=120800 ,test_acc:=0.227223
+epoch:=120900 ,test_acc:=0.237778
+epoch:=121000 ,test_acc:=0.222923
+epoch:=121100 ,test_acc:=0.227228
+epoch:=121200 ,test_acc:=0.221854
+epoch:=121300 ,test_acc:=0.221629
+epoch:=121400 ,test_acc:=0.217689
+epoch:=121500 ,test_acc:=0.220288
+epoch:=121600 ,test_acc:=0.222766
+epoch:=121700 ,test_acc:=0.226721
+epoch:=121800 ,test_acc:=0.232884
+epoch:=121900 ,test_acc:=0.227128
+epoch:=122000 ,test_acc:=0.216680
+epoch:=122100 ,test_acc:=0.218856
+epoch:=122200 ,test_acc:=0.227947
+epoch:=122300 ,test_acc:=0.230638
+epoch:=122400 ,test_acc:=0.218009
+epoch:=122500 ,test_acc:=0.252442
+epoch:=122600 ,test_acc:=0.240727
+epoch:=122700 ,test_acc:=0.218921
+epoch:=122800 ,test_acc:=0.220051
+epoch:=122900 ,test_acc:=0.222665
+epoch:=123000 ,test_acc:=0.220650
+epoch:=123100 ,test_acc:=0.217747
+epoch:=123200 ,test_acc:=0.220381
+epoch:=123300 ,test_acc:=0.223858
+epoch:=123400 ,test_acc:=0.231462
+epoch:=123500 ,test_acc:=0.223997
+epoch:=123600 ,test_acc:=0.215521 ModelSave!
+epoch:=123700 ,test_acc:=0.242152
+epoch:=123800 ,test_acc:=0.231702
+epoch:=123900 ,test_acc:=0.221921
+epoch:=124000 ,test_acc:=0.251568
+epoch:=124100 ,test_acc:=0.241375
+epoch:=124200 ,test_acc:=0.225319
+epoch:=124300 ,test_acc:=0.213858 ModelSave!
+epoch:=124400 ,test_acc:=0.218489
+epoch:=124500 ,test_acc:=0.235850
+epoch:=124600 ,test_acc:=0.218320
+epoch:=124700 ,test_acc:=0.237481
+epoch:=124800 ,test_acc:=0.223587
+epoch:=124900 ,test_acc:=0.225449
+epoch:=125000 ,test_acc:=0.225430
+epoch:=125100 ,test_acc:=0.223455
+epoch:=125200 ,test_acc:=0.219705
+epoch:=125300 ,test_acc:=0.220476
+epoch:=125400 ,test_acc:=0.223009
+epoch:=125500 ,test_acc:=0.229693
+epoch:=125600 ,test_acc:=0.228955
+epoch:=125700 ,test_acc:=0.244004
+epoch:=125800 ,test_acc:=0.216785
+epoch:=125900 ,test_acc:=0.214652
+epoch:=126000 ,test_acc:=0.230654
+epoch:=126100 ,test_acc:=0.218157
+epoch:=126200 ,test_acc:=0.229318
+epoch:=126300 ,test_acc:=0.224716
+epoch:=126400 ,test_acc:=0.219304
+epoch:=126500 ,test_acc:=0.222103
+epoch:=126600 ,test_acc:=0.218168
+epoch:=126700 ,test_acc:=0.246381
+epoch:=126800 ,test_acc:=0.231654
+epoch:=126900 ,test_acc:=0.216594
+epoch:=127000 ,test_acc:=0.249241
+epoch:=127100 ,test_acc:=0.218906
+epoch:=127200 ,test_acc:=0.219289
+epoch:=127300 ,test_acc:=0.228440
+epoch:=127400 ,test_acc:=0.231009
+epoch:=127500 ,test_acc:=0.218412
+epoch:=127600 ,test_acc:=0.224379
+epoch:=127700 ,test_acc:=0.217376
+epoch:=127800 ,test_acc:=0.231986
+epoch:=127900 ,test_acc:=0.216279
+epoch:=128000 ,test_acc:=0.229743
+epoch:=128100 ,test_acc:=0.218905
+epoch:=128200 ,test_acc:=0.224894
+epoch:=128300 ,test_acc:=0.220186
+epoch:=128400 ,test_acc:=0.229845
+epoch:=128500 ,test_acc:=0.218320
+epoch:=128600 ,test_acc:=0.214099
+epoch:=128700 ,test_acc:=0.214748
+epoch:=128800 ,test_acc:=0.251752
+epoch:=128900 ,test_acc:=0.216494
+epoch:=129000 ,test_acc:=0.235808
+epoch:=129100 ,test_acc:=0.232881
+epoch:=129200 ,test_acc:=0.215538
+epoch:=129300 ,test_acc:=0.221290
+epoch:=129400 ,test_acc:=0.251237
+epoch:=129500 ,test_acc:=0.216405
+epoch:=129600 ,test_acc:=0.220584
+epoch:=129700 ,test_acc:=0.217048
+epoch:=129800 ,test_acc:=0.226433
+epoch:=129900 ,test_acc:=0.221645
+epoch:=130000 ,test_acc:=0.227245
+epoch:=130100 ,test_acc:=0.215683
+epoch:=130200 ,test_acc:=0.228931
+epoch:=130300 ,test_acc:=0.216058
+epoch:=130400 ,test_acc:=0.223964
+epoch:=130500 ,test_acc:=0.225950
+epoch:=130600 ,test_acc:=0.221287
+epoch:=130700 ,test_acc:=0.227962
+epoch:=130800 ,test_acc:=0.225427
+epoch:=130900 ,test_acc:=0.225583
+epoch:=131000 ,test_acc:=0.235031
+epoch:=131100 ,test_acc:=0.217006
+epoch:=131200 ,test_acc:=0.235026
+epoch:=131300 ,test_acc:=0.223844
+epoch:=131400 ,test_acc:=0.213425 ModelSave!
+epoch:=131500 ,test_acc:=0.237348
+epoch:=131600 ,test_acc:=0.217463
+epoch:=131700 ,test_acc:=0.215693
+epoch:=131800 ,test_acc:=0.229278
+epoch:=131900 ,test_acc:=0.220366
+epoch:=132000 ,test_acc:=0.233296
+epoch:=132100 ,test_acc:=0.218269
+epoch:=132200 ,test_acc:=0.234087
+epoch:=132300 ,test_acc:=0.230147
+epoch:=132400 ,test_acc:=0.222267
+epoch:=132500 ,test_acc:=0.217709
+epoch:=132600 ,test_acc:=0.219284
+epoch:=132700 ,test_acc:=0.225854
+epoch:=132800 ,test_acc:=0.217727
+epoch:=132900 ,test_acc:=0.218987
+epoch:=133000 ,test_acc:=0.223089
+epoch:=133100 ,test_acc:=0.219001
+epoch:=133200 ,test_acc:=0.228101
+epoch:=133300 ,test_acc:=0.249346
+epoch:=133400 ,test_acc:=0.226195
+epoch:=133500 ,test_acc:=0.220635
+epoch:=133600 ,test_acc:=0.244223
+epoch:=133700 ,test_acc:=0.219979
+epoch:=133800 ,test_acc:=0.225674
+epoch:=133900 ,test_acc:=0.218829
+epoch:=134000 ,test_acc:=0.229285
+epoch:=134100 ,test_acc:=0.224984
+epoch:=134200 ,test_acc:=0.219422
+epoch:=134300 ,test_acc:=0.230910
+epoch:=134400 ,test_acc:=0.221902
+epoch:=134500 ,test_acc:=0.220039
+epoch:=134600 ,test_acc:=0.226982
+epoch:=134700 ,test_acc:=0.215744
+epoch:=134800 ,test_acc:=0.223709
+epoch:=134900 ,test_acc:=0.232956
+epoch:=135000 ,test_acc:=0.233437
+epoch:=135100 ,test_acc:=0.219521
+epoch:=135200 ,test_acc:=0.240130
+epoch:=135300 ,test_acc:=0.228973
+epoch:=135400 ,test_acc:=0.227025
+epoch:=135500 ,test_acc:=0.224787
+epoch:=135600 ,test_acc:=0.219223
+epoch:=135700 ,test_acc:=0.226981
+epoch:=135800 ,test_acc:=0.221488
+epoch:=135900 ,test_acc:=0.220687
+epoch:=136000 ,test_acc:=0.223257
+epoch:=136100 ,test_acc:=0.220243
+epoch:=136200 ,test_acc:=0.227708
+epoch:=136300 ,test_acc:=0.222563
+epoch:=136400 ,test_acc:=0.224442
+epoch:=136500 ,test_acc:=0.223984
+epoch:=136600 ,test_acc:=0.233630
+epoch:=136700 ,test_acc:=0.227593
+epoch:=136800 ,test_acc:=0.229369
+epoch:=136900 ,test_acc:=0.228060
+epoch:=137000 ,test_acc:=0.229336
+epoch:=137100 ,test_acc:=0.221894
+epoch:=137200 ,test_acc:=0.219039
+epoch:=137300 ,test_acc:=0.233494
+epoch:=137400 ,test_acc:=0.223530
+epoch:=137500 ,test_acc:=0.222010
+epoch:=137600 ,test_acc:=0.219057
+epoch:=137700 ,test_acc:=0.224471
+epoch:=137800 ,test_acc:=0.236510
+epoch:=137900 ,test_acc:=0.216028
+epoch:=138000 ,test_acc:=0.218407
+epoch:=138100 ,test_acc:=0.226163
+epoch:=138200 ,test_acc:=0.225334
+epoch:=138300 ,test_acc:=0.222903
+epoch:=138400 ,test_acc:=0.231152
+epoch:=138500 ,test_acc:=0.219191
+epoch:=138600 ,test_acc:=0.222466
+epoch:=138700 ,test_acc:=0.214185
+epoch:=138800 ,test_acc:=0.238612
+epoch:=138900 ,test_acc:=0.217072
+epoch:=139000 ,test_acc:=0.215556
+epoch:=139100 ,test_acc:=0.225126
+epoch:=139200 ,test_acc:=0.216983
+epoch:=139300 ,test_acc:=0.215151
+epoch:=139400 ,test_acc:=0.224088
+epoch:=139500 ,test_acc:=0.221071
+epoch:=139600 ,test_acc:=0.213665
+epoch:=139700 ,test_acc:=0.232053
+epoch:=139800 ,test_acc:=0.220507
+epoch:=139900 ,test_acc:=0.222116
+epoch:=140000 ,test_acc:=0.218605
+epoch:=140100 ,test_acc:=0.217469
+epoch:=140200 ,test_acc:=0.221413
+epoch:=140300 ,test_acc:=0.236922
+epoch:=140400 ,test_acc:=0.219655
+epoch:=140500 ,test_acc:=0.227518
+epoch:=140600 ,test_acc:=0.214802
+epoch:=140700 ,test_acc:=0.216968
+epoch:=140800 ,test_acc:=0.223271
+epoch:=140900 ,test_acc:=0.226033
+epoch:=141000 ,test_acc:=0.216012
+epoch:=141100 ,test_acc:=0.217016
+epoch:=141200 ,test_acc:=0.217940
+epoch:=141300 ,test_acc:=0.221212
+epoch:=141400 ,test_acc:=0.228630
+epoch:=141500 ,test_acc:=0.219636
+epoch:=141600 ,test_acc:=0.222198
+epoch:=141700 ,test_acc:=0.219066
+epoch:=141800 ,test_acc:=0.224993
+epoch:=141900 ,test_acc:=0.213989
+epoch:=142000 ,test_acc:=0.215614
+epoch:=142100 ,test_acc:=0.228553
+epoch:=142200 ,test_acc:=0.221874
+epoch:=142300 ,test_acc:=0.231039
+epoch:=142400 ,test_acc:=0.221522
+epoch:=142500 ,test_acc:=0.219402
+epoch:=142600 ,test_acc:=0.215312
+epoch:=142700 ,test_acc:=0.214213
+epoch:=142800 ,test_acc:=0.216805
+epoch:=142900 ,test_acc:=0.214392
+epoch:=143000 ,test_acc:=0.222734
+epoch:=143100 ,test_acc:=0.220150
+epoch:=143200 ,test_acc:=0.220820
+epoch:=143300 ,test_acc:=0.220396
+epoch:=143400 ,test_acc:=0.214144
+epoch:=143500 ,test_acc:=0.220687
+epoch:=143600 ,test_acc:=0.226119
+epoch:=143700 ,test_acc:=0.221580
+epoch:=143800 ,test_acc:=0.227316
+epoch:=143900 ,test_acc:=0.221659
+epoch:=144000 ,test_acc:=0.226241
+epoch:=144100 ,test_acc:=0.215739
+epoch:=144200 ,test_acc:=0.216352
+epoch:=144300 ,test_acc:=0.221908
+epoch:=144400 ,test_acc:=0.215376
+epoch:=144500 ,test_acc:=0.213317 ModelSave!
+epoch:=144600 ,test_acc:=0.217062
+epoch:=144700 ,test_acc:=0.220116
+epoch:=144800 ,test_acc:=0.220281
+epoch:=144900 ,test_acc:=0.214789
+epoch:=145000 ,test_acc:=0.242211
+epoch:=145100 ,test_acc:=0.215287
+epoch:=145200 ,test_acc:=0.224398
+epoch:=145300 ,test_acc:=0.236225
+epoch:=145400 ,test_acc:=0.221670
+epoch:=145500 ,test_acc:=0.216891
+epoch:=145600 ,test_acc:=0.222939
+epoch:=145700 ,test_acc:=0.215435
+epoch:=145800 ,test_acc:=0.217232
+epoch:=145900 ,test_acc:=0.231484
+epoch:=146000 ,test_acc:=0.233332
+epoch:=146100 ,test_acc:=0.216901
+epoch:=146200 ,test_acc:=0.226351
+epoch:=146300 ,test_acc:=0.218570
+epoch:=146400 ,test_acc:=0.240110
+epoch:=146500 ,test_acc:=0.234825
+epoch:=146600 ,test_acc:=0.221286
+epoch:=146700 ,test_acc:=0.221537
+epoch:=146800 ,test_acc:=0.216462
+epoch:=146900 ,test_acc:=0.218293
+epoch:=147000 ,test_acc:=0.223739
+epoch:=147100 ,test_acc:=0.215278
+epoch:=147200 ,test_acc:=0.234139
+epoch:=147300 ,test_acc:=0.216932
+epoch:=147400 ,test_acc:=0.237247
+epoch:=147500 ,test_acc:=0.229072
+epoch:=147600 ,test_acc:=0.224674
+epoch:=147700 ,test_acc:=0.215470
+epoch:=147800 ,test_acc:=0.226653
+epoch:=147900 ,test_acc:=0.217017
+epoch:=148000 ,test_acc:=0.245905
+epoch:=148100 ,test_acc:=0.213771
+epoch:=148200 ,test_acc:=0.229181
+epoch:=148300 ,test_acc:=0.219798
+epoch:=148400 ,test_acc:=0.262774
+epoch:=148500 ,test_acc:=0.224137
+epoch:=148600 ,test_acc:=0.216473
+epoch:=148700 ,test_acc:=0.217735
+epoch:=148800 ,test_acc:=0.213049 ModelSave!
+epoch:=148900 ,test_acc:=0.216986
+epoch:=149000 ,test_acc:=0.221019
+epoch:=149100 ,test_acc:=0.220865
+epoch:=149200 ,test_acc:=0.228273
+epoch:=149300 ,test_acc:=0.220769
+epoch:=149400 ,test_acc:=0.219812
+epoch:=149500 ,test_acc:=0.223864
+epoch:=149600 ,test_acc:=0.215279
+epoch:=149700 ,test_acc:=0.221706
+epoch:=149800 ,test_acc:=0.216739
+epoch:=149900 ,test_acc:=0.225076
+epoch:=150000 ,test_acc:=0.210675 ModelSave!
+epoch:=150100 ,test_acc:=0.212472
+epoch:=150200 ,test_acc:=0.215420
+epoch:=150300 ,test_acc:=0.215112
+epoch:=150400 ,test_acc:=0.214005
+epoch:=150500 ,test_acc:=0.219086
+epoch:=150600 ,test_acc:=0.215779
+epoch:=150700 ,test_acc:=0.216701
+epoch:=150800 ,test_acc:=0.225405
+epoch:=150900 ,test_acc:=0.217355
+epoch:=151000 ,test_acc:=0.225052
+epoch:=151100 ,test_acc:=0.215663
+epoch:=151200 ,test_acc:=0.227998
+epoch:=151300 ,test_acc:=0.218430
+epoch:=151400 ,test_acc:=0.218380
+epoch:=151500 ,test_acc:=0.216523
+epoch:=151600 ,test_acc:=0.243423
+epoch:=151700 ,test_acc:=0.217324
+epoch:=151800 ,test_acc:=0.216733
+epoch:=151900 ,test_acc:=0.213832
+epoch:=152000 ,test_acc:=0.227775
+epoch:=152100 ,test_acc:=0.242700
+epoch:=152200 ,test_acc:=0.225179
+epoch:=152300 ,test_acc:=0.213933
+epoch:=152400 ,test_acc:=0.215375
+epoch:=152500 ,test_acc:=0.219582
+epoch:=152600 ,test_acc:=0.215656
+epoch:=152700 ,test_acc:=0.214659
+epoch:=152800 ,test_acc:=0.213082
+epoch:=152900 ,test_acc:=0.222743
+epoch:=153000 ,test_acc:=0.222630
+epoch:=153100 ,test_acc:=0.226300
+epoch:=153200 ,test_acc:=0.225142
+epoch:=153300 ,test_acc:=0.215382
+epoch:=153400 ,test_acc:=0.222863
+epoch:=153500 ,test_acc:=0.221111
+epoch:=153600 ,test_acc:=0.220835
+epoch:=153700 ,test_acc:=0.220967
+epoch:=153800 ,test_acc:=0.220734
+epoch:=153900 ,test_acc:=0.220629
+epoch:=154000 ,test_acc:=0.220238
+epoch:=154100 ,test_acc:=0.218532
+epoch:=154200 ,test_acc:=0.214019
+epoch:=154300 ,test_acc:=0.219475
+epoch:=154400 ,test_acc:=0.230965
+epoch:=154500 ,test_acc:=0.217729
+epoch:=154600 ,test_acc:=0.218989
+epoch:=154700 ,test_acc:=0.215696
+epoch:=154800 ,test_acc:=0.213359
+epoch:=154900 ,test_acc:=0.213430
+epoch:=155000 ,test_acc:=0.246358
+epoch:=155100 ,test_acc:=0.217799
+epoch:=155200 ,test_acc:=0.213860
+epoch:=155300 ,test_acc:=0.226891
+epoch:=155400 ,test_acc:=0.226050
+epoch:=155500 ,test_acc:=0.218585
+epoch:=155600 ,test_acc:=0.219498
+epoch:=155700 ,test_acc:=0.214418
+epoch:=155800 ,test_acc:=0.211418
+epoch:=155900 ,test_acc:=0.226900
+epoch:=156000 ,test_acc:=0.222965
+epoch:=156100 ,test_acc:=0.213362
+epoch:=156200 ,test_acc:=0.216940
+epoch:=156300 ,test_acc:=0.244106
+epoch:=156400 ,test_acc:=0.215730
+epoch:=156500 ,test_acc:=0.230298
+epoch:=156600 ,test_acc:=0.226645
+epoch:=156700 ,test_acc:=0.219299
+epoch:=156800 ,test_acc:=0.221716
+epoch:=156900 ,test_acc:=0.214135
+epoch:=157000 ,test_acc:=0.223479
+epoch:=157100 ,test_acc:=0.218484
+epoch:=157200 ,test_acc:=0.228049
+epoch:=157300 ,test_acc:=0.210772
+epoch:=157400 ,test_acc:=0.219475
+epoch:=157500 ,test_acc:=0.215132
+epoch:=157600 ,test_acc:=0.217874
+epoch:=157700 ,test_acc:=0.238436
+epoch:=157800 ,test_acc:=0.216498
+epoch:=157900 ,test_acc:=0.225791
+epoch:=158000 ,test_acc:=0.232372
+epoch:=158100 ,test_acc:=0.220127
+epoch:=158200 ,test_acc:=0.231226
+epoch:=158300 ,test_acc:=0.217527
+epoch:=158400 ,test_acc:=0.212677
+epoch:=158500 ,test_acc:=0.224687
+epoch:=158600 ,test_acc:=0.220281
+epoch:=158700 ,test_acc:=0.218955
+epoch:=158800 ,test_acc:=0.229478
+epoch:=158900 ,test_acc:=0.219786
+epoch:=159000 ,test_acc:=0.226273
+epoch:=159100 ,test_acc:=0.213702
+epoch:=159200 ,test_acc:=0.215704
+epoch:=159300 ,test_acc:=0.220086
+epoch:=159400 ,test_acc:=0.217028
+epoch:=159500 ,test_acc:=0.223896
+epoch:=159600 ,test_acc:=0.225092
+epoch:=159700 ,test_acc:=0.216494
+epoch:=159800 ,test_acc:=0.228485
+epoch:=159900 ,test_acc:=0.214416
+epoch:=160000 ,test_acc:=0.215161
+epoch:=160100 ,test_acc:=0.218960
+epoch:=160200 ,test_acc:=0.219202
+epoch:=160300 ,test_acc:=0.212805
+epoch:=160400 ,test_acc:=0.211625
+epoch:=160500 ,test_acc:=0.221591
+epoch:=160600 ,test_acc:=0.216656
+epoch:=160700 ,test_acc:=0.221704
+epoch:=160800 ,test_acc:=0.237474
+epoch:=160900 ,test_acc:=0.214593
+epoch:=161000 ,test_acc:=0.215748
+epoch:=161100 ,test_acc:=0.233819
+epoch:=161200 ,test_acc:=0.212559
+epoch:=161300 ,test_acc:=0.211615
+epoch:=161400 ,test_acc:=0.229057
+epoch:=161500 ,test_acc:=0.221953
+epoch:=161600 ,test_acc:=0.215727
+epoch:=161700 ,test_acc:=0.223829
+epoch:=161800 ,test_acc:=0.218450
+epoch:=161900 ,test_acc:=0.215964
+epoch:=162000 ,test_acc:=0.214597
+epoch:=162100 ,test_acc:=0.215223
+epoch:=162200 ,test_acc:=0.219432
+epoch:=162300 ,test_acc:=0.221144
+epoch:=162400 ,test_acc:=0.217745
+epoch:=162500 ,test_acc:=0.216950
+epoch:=162600 ,test_acc:=0.214689
+epoch:=162700 ,test_acc:=0.218229
+epoch:=162800 ,test_acc:=0.220403
+epoch:=162900 ,test_acc:=0.212715
+epoch:=163000 ,test_acc:=0.214842
+epoch:=163100 ,test_acc:=0.220948
+epoch:=163200 ,test_acc:=0.230682
+epoch:=163300 ,test_acc:=0.219063
+epoch:=163400 ,test_acc:=0.215681
+epoch:=163500 ,test_acc:=0.214777
+epoch:=163600 ,test_acc:=0.220794
+epoch:=163700 ,test_acc:=0.217127
+epoch:=163800 ,test_acc:=0.230257
+epoch:=163900 ,test_acc:=0.214560
+epoch:=164000 ,test_acc:=0.223652
+epoch:=164100 ,test_acc:=0.214674
+epoch:=164200 ,test_acc:=0.226059
+epoch:=164300 ,test_acc:=0.216220
+epoch:=164400 ,test_acc:=0.220494
+epoch:=164500 ,test_acc:=0.217128
+epoch:=164600 ,test_acc:=0.219493
+epoch:=164700 ,test_acc:=0.231747
+epoch:=164800 ,test_acc:=0.230341
+epoch:=164900 ,test_acc:=0.219541
+epoch:=165000 ,test_acc:=0.214458
+epoch:=165100 ,test_acc:=0.220232
+epoch:=165200 ,test_acc:=0.212052
+epoch:=165300 ,test_acc:=0.219226
+epoch:=165400 ,test_acc:=0.214841
+epoch:=165500 ,test_acc:=0.211858
+epoch:=165600 ,test_acc:=0.215192
+epoch:=165700 ,test_acc:=0.219101
+epoch:=165800 ,test_acc:=0.212197
+epoch:=165900 ,test_acc:=0.216021
+epoch:=166000 ,test_acc:=0.217795
+epoch:=166100 ,test_acc:=0.228128
+epoch:=166200 ,test_acc:=0.212426
+epoch:=166300 ,test_acc:=0.232120
+epoch:=166400 ,test_acc:=0.214245
+epoch:=166500 ,test_acc:=0.219717
+epoch:=166600 ,test_acc:=0.221025
+epoch:=166700 ,test_acc:=0.226730
+epoch:=166800 ,test_acc:=0.212777
+epoch:=166900 ,test_acc:=0.215075
+epoch:=167000 ,test_acc:=0.231935
+epoch:=167100 ,test_acc:=0.215829
+epoch:=167200 ,test_acc:=0.218523
+epoch:=167300 ,test_acc:=0.217074
+epoch:=167400 ,test_acc:=0.225531
+epoch:=167500 ,test_acc:=0.216124
+epoch:=167600 ,test_acc:=0.217601
+epoch:=167700 ,test_acc:=0.212358
+epoch:=167800 ,test_acc:=0.221074
+epoch:=167900 ,test_acc:=0.214701
+epoch:=168000 ,test_acc:=0.219207
+epoch:=168100 ,test_acc:=0.219966
+epoch:=168200 ,test_acc:=0.220191
+epoch:=168300 ,test_acc:=0.230569
+epoch:=168400 ,test_acc:=0.214835
+epoch:=168500 ,test_acc:=0.223262
+epoch:=168600 ,test_acc:=0.212118
+epoch:=168700 ,test_acc:=0.212812
+epoch:=168800 ,test_acc:=0.220290
+epoch:=168900 ,test_acc:=0.218691
+epoch:=169000 ,test_acc:=0.226141
+epoch:=169100 ,test_acc:=0.219515
+epoch:=169200 ,test_acc:=0.211241
+epoch:=169300 ,test_acc:=0.211681
+epoch:=169400 ,test_acc:=0.220798
+epoch:=169500 ,test_acc:=0.213367
+epoch:=169600 ,test_acc:=0.219472
+epoch:=169700 ,test_acc:=0.219271
+epoch:=169800 ,test_acc:=0.212680
+epoch:=169900 ,test_acc:=0.220018
+epoch:=170000 ,test_acc:=0.221607
+epoch:=170100 ,test_acc:=0.223698
+epoch:=170200 ,test_acc:=0.224982
+epoch:=170300 ,test_acc:=0.209584 ModelSave!
+epoch:=170400 ,test_acc:=0.213469
+epoch:=170500 ,test_acc:=0.221138
+epoch:=170600 ,test_acc:=0.212204
+epoch:=170700 ,test_acc:=0.212610
+epoch:=170800 ,test_acc:=0.217178
+epoch:=170900 ,test_acc:=0.220648
+epoch:=171000 ,test_acc:=0.216924
+epoch:=171100 ,test_acc:=0.214850
+epoch:=171200 ,test_acc:=0.214932
+epoch:=171300 ,test_acc:=0.212877
+epoch:=171400 ,test_acc:=0.213231
+epoch:=171500 ,test_acc:=0.212795
+epoch:=171600 ,test_acc:=0.225084
+epoch:=171700 ,test_acc:=0.212527
+epoch:=171800 ,test_acc:=0.214538
+epoch:=171900 ,test_acc:=0.241211
+epoch:=172000 ,test_acc:=0.222194
+epoch:=172100 ,test_acc:=0.225413
+epoch:=172200 ,test_acc:=0.216270
+epoch:=172300 ,test_acc:=0.215941
+epoch:=172400 ,test_acc:=0.215620
+epoch:=172500 ,test_acc:=0.220915
+epoch:=172600 ,test_acc:=0.226779
+epoch:=172700 ,test_acc:=0.217081
+epoch:=172800 ,test_acc:=0.214548
+epoch:=172900 ,test_acc:=0.221891
+epoch:=173000 ,test_acc:=0.212827
+epoch:=173100 ,test_acc:=0.218710
+epoch:=173200 ,test_acc:=0.221486
+epoch:=173300 ,test_acc:=0.217203
+epoch:=173400 ,test_acc:=0.215114
+epoch:=173500 ,test_acc:=0.219161
+epoch:=173600 ,test_acc:=0.218361
+epoch:=173700 ,test_acc:=0.223277
+epoch:=173800 ,test_acc:=0.220691
+epoch:=173900 ,test_acc:=0.211277
+epoch:=174000 ,test_acc:=0.212849
+epoch:=174100 ,test_acc:=0.229152
+epoch:=174200 ,test_acc:=0.217998
+epoch:=174300 ,test_acc:=0.213159
+epoch:=174400 ,test_acc:=0.221381
+epoch:=174500 ,test_acc:=0.214975
+epoch:=174600 ,test_acc:=0.218373
+epoch:=174700 ,test_acc:=0.220198
+epoch:=174800 ,test_acc:=0.213101
+epoch:=174900 ,test_acc:=0.221465
+epoch:=175000 ,test_acc:=0.214964
+epoch:=175100 ,test_acc:=0.215178
+epoch:=175200 ,test_acc:=0.223499
+epoch:=175300 ,test_acc:=0.237566
+epoch:=175400 ,test_acc:=0.225224
+epoch:=175500 ,test_acc:=0.217795
+epoch:=175600 ,test_acc:=0.219139
+epoch:=175700 ,test_acc:=0.222276
+epoch:=175800 ,test_acc:=0.212530
+epoch:=175900 ,test_acc:=0.216393
+epoch:=176000 ,test_acc:=0.211562
+epoch:=176100 ,test_acc:=0.214715
+epoch:=176200 ,test_acc:=0.210198
+epoch:=176300 ,test_acc:=0.216487
+epoch:=176400 ,test_acc:=0.216349
+epoch:=176500 ,test_acc:=0.221385
+epoch:=176600 ,test_acc:=0.222389
+epoch:=176700 ,test_acc:=0.213328
+epoch:=176800 ,test_acc:=0.232426
+epoch:=176900 ,test_acc:=0.217573
+epoch:=177000 ,test_acc:=0.217260
+epoch:=177100 ,test_acc:=0.218220
+epoch:=177200 ,test_acc:=0.218747
+epoch:=177300 ,test_acc:=0.239731
+epoch:=177400 ,test_acc:=0.226962
+epoch:=177500 ,test_acc:=0.217249
+epoch:=177600 ,test_acc:=0.217155
+epoch:=177700 ,test_acc:=0.215818
+epoch:=177800 ,test_acc:=0.212223
+epoch:=177900 ,test_acc:=0.220068
+epoch:=178000 ,test_acc:=0.218342
+epoch:=178100 ,test_acc:=0.217740
+epoch:=178200 ,test_acc:=0.217769
+epoch:=178300 ,test_acc:=0.218342
+epoch:=178400 ,test_acc:=0.223436
+epoch:=178500 ,test_acc:=0.216421
+epoch:=178600 ,test_acc:=0.217598
+epoch:=178700 ,test_acc:=0.211898
+epoch:=178800 ,test_acc:=0.210503
+epoch:=178900 ,test_acc:=0.224619
+epoch:=179000 ,test_acc:=0.221588
+epoch:=179100 ,test_acc:=0.234972
+epoch:=179200 ,test_acc:=0.213002
+epoch:=179300 ,test_acc:=0.209543 ModelSave!
+epoch:=179400 ,test_acc:=0.226773
+epoch:=179500 ,test_acc:=0.215035
+epoch:=179600 ,test_acc:=0.224743
+epoch:=179700 ,test_acc:=0.218985
+epoch:=179800 ,test_acc:=0.234958
+epoch:=179900 ,test_acc:=0.217587
+epoch:=180000 ,test_acc:=0.215750
+epoch:=180100 ,test_acc:=0.212336
+epoch:=180200 ,test_acc:=0.218206
+epoch:=180300 ,test_acc:=0.220074
+epoch:=180400 ,test_acc:=0.214467
+epoch:=180500 ,test_acc:=0.215111
+epoch:=180600 ,test_acc:=0.214982
+epoch:=180700 ,test_acc:=0.214990
+epoch:=180800 ,test_acc:=0.232817
+epoch:=180900 ,test_acc:=0.220753
+epoch:=181000 ,test_acc:=0.238059
+epoch:=181100 ,test_acc:=0.213067
+epoch:=181200 ,test_acc:=0.222999
+epoch:=181300 ,test_acc:=0.217848
+epoch:=181400 ,test_acc:=0.225152
+epoch:=181500 ,test_acc:=0.215828
+epoch:=181600 ,test_acc:=0.214714
+epoch:=181700 ,test_acc:=0.218883
+epoch:=181800 ,test_acc:=0.220196
+epoch:=181900 ,test_acc:=0.225784
+epoch:=182000 ,test_acc:=0.217024
+epoch:=182100 ,test_acc:=0.223021
+epoch:=182200 ,test_acc:=0.212724
+epoch:=182300 ,test_acc:=0.222498
+epoch:=182400 ,test_acc:=0.231351
+epoch:=182500 ,test_acc:=0.213727
+epoch:=182600 ,test_acc:=0.213254
+epoch:=182700 ,test_acc:=0.221484
+epoch:=182800 ,test_acc:=0.213883
+epoch:=182900 ,test_acc:=0.224972
+epoch:=183000 ,test_acc:=0.210482
+epoch:=183100 ,test_acc:=0.216877
+epoch:=183200 ,test_acc:=0.231283
+epoch:=183300 ,test_acc:=0.216745
+epoch:=183400 ,test_acc:=0.218630
+epoch:=183500 ,test_acc:=0.219204
+epoch:=183600 ,test_acc:=0.222597
+epoch:=183700 ,test_acc:=0.233763
+epoch:=183800 ,test_acc:=0.214558
+epoch:=183900 ,test_acc:=0.218925
+epoch:=184000 ,test_acc:=0.211198
+epoch:=184100 ,test_acc:=0.210040
+epoch:=184200 ,test_acc:=0.216149
+epoch:=184300 ,test_acc:=0.214661
+epoch:=184400 ,test_acc:=0.237634
+epoch:=184500 ,test_acc:=0.218416
+epoch:=184600 ,test_acc:=0.217455
+epoch:=184700 ,test_acc:=0.218936
+epoch:=184800 ,test_acc:=0.223576
+epoch:=184900 ,test_acc:=0.217221
+epoch:=185000 ,test_acc:=0.218453
+epoch:=185100 ,test_acc:=0.218951
+epoch:=185200 ,test_acc:=0.215643
+epoch:=185300 ,test_acc:=0.213726
+epoch:=185400 ,test_acc:=0.217409
+epoch:=185500 ,test_acc:=0.215900
+epoch:=185600 ,test_acc:=0.223924
+epoch:=185700 ,test_acc:=0.219744
+epoch:=185800 ,test_acc:=0.229464
+epoch:=185900 ,test_acc:=0.223606
+epoch:=186000 ,test_acc:=0.224856
+epoch:=186100 ,test_acc:=0.218597
+epoch:=186200 ,test_acc:=0.210649
+epoch:=186300 ,test_acc:=0.221500
+epoch:=186400 ,test_acc:=0.225945
+epoch:=186500 ,test_acc:=0.218157
+epoch:=186600 ,test_acc:=0.240287
+epoch:=186700 ,test_acc:=0.213236
+epoch:=186800 ,test_acc:=0.229108
+epoch:=186900 ,test_acc:=0.219480
+epoch:=187000 ,test_acc:=0.219049
+epoch:=187100 ,test_acc:=0.211101
+epoch:=187200 ,test_acc:=0.210357
+epoch:=187300 ,test_acc:=0.216977
+epoch:=187400 ,test_acc:=0.212961
+epoch:=187500 ,test_acc:=0.214525
+epoch:=187600 ,test_acc:=0.230732
+epoch:=187700 ,test_acc:=0.210718
+epoch:=187800 ,test_acc:=0.211571
+epoch:=187900 ,test_acc:=0.212872
+epoch:=188000 ,test_acc:=0.211451
+epoch:=188100 ,test_acc:=0.216918
+epoch:=188200 ,test_acc:=0.210449
+epoch:=188300 ,test_acc:=0.214660
+epoch:=188400 ,test_acc:=0.209208 ModelSave!
+epoch:=188500 ,test_acc:=0.212152
+epoch:=188600 ,test_acc:=0.222182
+epoch:=188700 ,test_acc:=0.215661
+epoch:=188800 ,test_acc:=0.211974
+epoch:=188900 ,test_acc:=0.221281
+epoch:=189000 ,test_acc:=0.225492
+epoch:=189100 ,test_acc:=0.213360
+epoch:=189200 ,test_acc:=0.219922
+epoch:=189300 ,test_acc:=0.221496
+epoch:=189400 ,test_acc:=0.216769
+epoch:=189500 ,test_acc:=0.211010
+epoch:=189600 ,test_acc:=0.220671
+epoch:=189700 ,test_acc:=0.214984
+epoch:=189800 ,test_acc:=0.227318
+epoch:=189900 ,test_acc:=0.231828
+epoch:=190000 ,test_acc:=0.211717
+epoch:=190100 ,test_acc:=0.214288
+epoch:=190200 ,test_acc:=0.215874
+epoch:=190300 ,test_acc:=0.220298
+epoch:=190400 ,test_acc:=0.214661
+epoch:=190500 ,test_acc:=0.213657
+epoch:=190600 ,test_acc:=0.241834
+epoch:=190700 ,test_acc:=0.227332
+epoch:=190800 ,test_acc:=0.221873
+epoch:=190900 ,test_acc:=0.213519
+epoch:=191000 ,test_acc:=0.217901
+epoch:=191100 ,test_acc:=0.214154
+epoch:=191200 ,test_acc:=0.217186
+epoch:=191300 ,test_acc:=0.209896
+epoch:=191400 ,test_acc:=0.216738
+epoch:=191500 ,test_acc:=0.216748
+epoch:=191600 ,test_acc:=0.237652
+epoch:=191700 ,test_acc:=0.217103
+epoch:=191800 ,test_acc:=0.211760
+epoch:=191900 ,test_acc:=0.221368
+epoch:=192000 ,test_acc:=0.211299
+epoch:=192100 ,test_acc:=0.211717
+epoch:=192200 ,test_acc:=0.213589
+epoch:=192300 ,test_acc:=0.232784
+epoch:=192400 ,test_acc:=0.214948
+epoch:=192500 ,test_acc:=0.218703
+epoch:=192600 ,test_acc:=0.211369
+epoch:=192700 ,test_acc:=0.212036
+epoch:=192800 ,test_acc:=0.214925
+epoch:=192900 ,test_acc:=0.228149
+epoch:=193000 ,test_acc:=0.218013
+epoch:=193100 ,test_acc:=0.215910
+epoch:=193200 ,test_acc:=0.212523
+epoch:=193300 ,test_acc:=0.213816
+epoch:=193400 ,test_acc:=0.218079
+epoch:=193500 ,test_acc:=0.218662
+epoch:=193600 ,test_acc:=0.229036
+epoch:=193700 ,test_acc:=0.228147
+epoch:=193800 ,test_acc:=0.213797
+epoch:=193900 ,test_acc:=0.209967
+epoch:=194000 ,test_acc:=0.224102
+epoch:=194100 ,test_acc:=0.222986
+epoch:=194200 ,test_acc:=0.212948
+epoch:=194300 ,test_acc:=0.214825
+epoch:=194400 ,test_acc:=0.214804
+epoch:=194500 ,test_acc:=0.213927
+epoch:=194600 ,test_acc:=0.239149
+epoch:=194700 ,test_acc:=0.213391
+epoch:=194800 ,test_acc:=0.213525
+epoch:=194900 ,test_acc:=0.224957
+epoch:=195000 ,test_acc:=0.218507
+epoch:=195100 ,test_acc:=0.215775
+epoch:=195200 ,test_acc:=0.230515
+epoch:=195300 ,test_acc:=0.231024
+epoch:=195400 ,test_acc:=0.224988
+epoch:=195500 ,test_acc:=0.219760
+epoch:=195600 ,test_acc:=0.219211
+epoch:=195700 ,test_acc:=0.225750
+epoch:=195800 ,test_acc:=0.214303
+epoch:=195900 ,test_acc:=0.215313
+epoch:=196000 ,test_acc:=0.215019
+epoch:=196100 ,test_acc:=0.211563
+epoch:=196200 ,test_acc:=0.220912
+epoch:=196300 ,test_acc:=0.214795
+epoch:=196400 ,test_acc:=0.214538
+epoch:=196500 ,test_acc:=0.219269
+epoch:=196600 ,test_acc:=0.210175
+epoch:=196700 ,test_acc:=0.212212
+epoch:=196800 ,test_acc:=0.225210
+epoch:=196900 ,test_acc:=0.212900
+epoch:=197000 ,test_acc:=0.214451
+epoch:=197100 ,test_acc:=0.229770
+epoch:=197200 ,test_acc:=0.213579
+epoch:=197300 ,test_acc:=0.211494
+epoch:=197400 ,test_acc:=0.221349
+epoch:=197500 ,test_acc:=0.217834
+epoch:=197600 ,test_acc:=0.231226
+epoch:=197700 ,test_acc:=0.214151
+epoch:=197800 ,test_acc:=0.212508
+epoch:=197900 ,test_acc:=0.210630
+epoch:=198000 ,test_acc:=0.210762
+epoch:=198100 ,test_acc:=0.219331
+epoch:=198200 ,test_acc:=0.219738
+epoch:=198300 ,test_acc:=0.217927
+epoch:=198400 ,test_acc:=0.220627
+epoch:=198500 ,test_acc:=0.217562
+epoch:=198600 ,test_acc:=0.225820
+epoch:=198700 ,test_acc:=0.227801
+epoch:=198800 ,test_acc:=0.210522
+epoch:=198900 ,test_acc:=0.214562
+epoch:=199000 ,test_acc:=0.237463
+epoch:=199100 ,test_acc:=0.216996
+epoch:=199200 ,test_acc:=0.221099
+epoch:=199300 ,test_acc:=0.214560
+epoch:=199400 ,test_acc:=0.210249
+epoch:=199500 ,test_acc:=0.212029
+epoch:=199600 ,test_acc:=0.209894
+epoch:=199700 ,test_acc:=0.226325
+epoch:=199800 ,test_acc:=0.219424
+epoch:=199900 ,test_acc:=0.215385

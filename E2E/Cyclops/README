@@ -1,0 +1,4 @@
+pure_pursuitはAutowareのpure_pursuitと入れ替えてください。
+PlaNet_LとCyclopsが僕のプログラムです。
+.shのディレクトリパスを書き換えて、.launchにイベントカメラのlaunchを含めるとよいと思います。
+よろしくお願いします。

@@ -1,0 +1,8 @@
+<!-- -->
+<launch>
+
+	<!-- rosrun waypoint_follower twist_filter -->
+	<node pkg="cyclops_waypoint_follower" type="twist_filter" name="twist_filter1" output="log">
+	</node>
+
+</launch>

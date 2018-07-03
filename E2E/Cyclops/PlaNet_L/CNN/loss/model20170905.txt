@@ -1,0 +1,60 @@
+epoch:=5209 ,train_acc:=101.311035 ,test_acc:=101.341572
+epoch:=10418 ,train_acc:=33.985123 ,test_acc:=34.010592
+epoch:=15627 ,train_acc:=11.130662 ,test_acc:=11.172426
+epoch:=20836 ,train_acc:=5.009033 ,test_acc:=5.059494
+epoch:=26045 ,train_acc:=3.080576 ,test_acc:=3.142506 ModelSave!
+epoch:=31254 ,train_acc:=2.083094 ,test_acc:=2.156142 ModelSave!
+epoch:=36463 ,train_acc:=1.528547 ,test_acc:=1.604891 ModelSave!
+epoch:=41672 ,train_acc:=1.144009 ,test_acc:=1.226895 ModelSave!
+epoch:=46881 ,train_acc:=0.943002 ,test_acc:=1.008887 ModelSave!
+epoch:=52090 ,train_acc:=0.779356 ,test_acc:=0.872449 ModelSave!
+epoch:=57299 ,train_acc:=0.688457 ,test_acc:=0.771807 ModelSave!
+epoch:=62508 ,train_acc:=0.586099 ,test_acc:=0.673030 ModelSave!
+epoch:=67717 ,train_acc:=0.534314 ,test_acc:=0.643690 ModelSave!
+epoch:=72926 ,train_acc:=0.497522 ,test_acc:=0.598420 ModelSave!
+epoch:=78135 ,train_acc:=0.464483 ,test_acc:=0.588908 ModelSave!
+epoch:=83344 ,train_acc:=0.424157 ,test_acc:=0.535954 ModelSave!
+epoch:=88553 ,train_acc:=0.394966 ,test_acc:=0.530834 ModelSave!
+epoch:=93762 ,train_acc:=0.363489 ,test_acc:=0.489325 ModelSave!
+epoch:=98971 ,train_acc:=0.362581 ,test_acc:=0.492427
+epoch:=104180 ,train_acc:=0.356923 ,test_acc:=0.493055
+epoch:=109389 ,train_acc:=0.358726 ,test_acc:=0.488060 ModelSave!
+epoch:=114598 ,train_acc:=0.368668 ,test_acc:=0.511684
+epoch:=119807 ,train_acc:=0.320308 ,test_acc:=0.463649 ModelSave!
+epoch:=125016 ,train_acc:=0.329582 ,test_acc:=0.473033
+epoch:=130225 ,train_acc:=0.336513 ,test_acc:=0.476107
+epoch:=135434 ,train_acc:=0.300449 ,test_acc:=0.451662 ModelSave!
+epoch:=140643 ,train_acc:=0.304275 ,test_acc:=0.455930
+epoch:=145852 ,train_acc:=0.313364 ,test_acc:=0.458474
+epoch:=151061 ,train_acc:=0.330475 ,test_acc:=0.462987
+epoch:=156270 ,train_acc:=0.297859 ,test_acc:=0.452272
+epoch:=161479 ,train_acc:=0.282357 ,test_acc:=0.449992 ModelSave!
+epoch:=166688 ,train_acc:=0.304394 ,test_acc:=0.451406
+epoch:=171897 ,train_acc:=0.280457 ,test_acc:=0.424761 ModelSave!
+epoch:=177106 ,train_acc:=0.288575 ,test_acc:=0.448246
+epoch:=182315 ,train_acc:=0.278359 ,test_acc:=0.443800
+epoch:=187524 ,train_acc:=0.290872 ,test_acc:=0.441253
+epoch:=192733 ,train_acc:=0.310904 ,test_acc:=0.458315
+epoch:=197942 ,train_acc:=0.286470 ,test_acc:=0.440162
+epoch:=203151 ,train_acc:=0.294863 ,test_acc:=0.466623
+epoch:=208360 ,train_acc:=0.287050 ,test_acc:=0.452026
+epoch:=213569 ,train_acc:=0.276101 ,test_acc:=0.434547
+epoch:=218778 ,train_acc:=0.284617 ,test_acc:=0.446365
+epoch:=223987 ,train_acc:=0.285434 ,test_acc:=0.453635
+epoch:=229196 ,train_acc:=0.278940 ,test_acc:=0.434589
+epoch:=234405 ,train_acc:=0.281896 ,test_acc:=0.447032
+epoch:=239614 ,train_acc:=0.295993 ,test_acc:=0.462406
+epoch:=244823 ,train_acc:=0.301294 ,test_acc:=0.448267
+epoch:=250032 ,train_acc:=0.279875 ,test_acc:=0.433988
+epoch:=255241 ,train_acc:=0.289102 ,test_acc:=0.452437
+epoch:=260450 ,train_acc:=0.276147 ,test_acc:=0.443481
+epoch:=265659 ,train_acc:=0.282636 ,test_acc:=0.442690
+epoch:=270868 ,train_acc:=0.278713 ,test_acc:=0.444243
+epoch:=276077 ,train_acc:=0.276445 ,test_acc:=0.451848
+epoch:=281286 ,train_acc:=0.253918 ,test_acc:=0.436536
+epoch:=286495 ,train_acc:=0.260720 ,test_acc:=0.432610
+epoch:=291704 ,train_acc:=0.262234 ,test_acc:=0.437443
+epoch:=296913 ,train_acc:=0.242642 ,test_acc:=0.428863
+epoch:=302122 ,train_acc:=0.274412 ,test_acc:=0.435131
+epoch:=307331 ,train_acc:=0.252030 ,test_acc:=0.432232
+epoch:=312540 ,train_acc:=0.282745 ,test_acc:=0.440892

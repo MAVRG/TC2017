@@ -1,0 +1,41 @@
+Sensor Shairing Manager ver.0.31
+ 
+                Eijiro TAKEUCHI 2008/6/4
+
+Sensor Sharing Managerはセンサデータを複数のプロセスで共有するためのプログラムです。
+
+：ディレクトリ構成
+SSM04
+-Makefile   make
+-README_jp  このファイル
+-bin        実行ファイル
+ -ssm       Sensor Shairing Manager 
+ -lsssm     登録されているセンサのリストの表示
+ -ssmlogger ログ取り
+ -ssmmultiplayer 複数のログの再生
+-src        ソースファイル
+ -ssm       ssmのソース 
+ -libSSM    ライブラリのソース
+-include    インクルードファイル
+-utilities  lssm,ssmlogger,ssmmultiplayerのソース
+-lib        ライブラリ
+
+
+：インストール
+make clean
+make
+make install
+
+以上で、
+実行プログラムはbin以下に置かれ、
+lib及び/usr/local/lib以下にライブラリ、
+/usr/local/include以下にヘッダファイルが置かれる。
+
+：実行ファイル
+bin以下に下記プログラムが置かれる。
+
+ ssm :本体。必ず起動する。
+
+ lsssm :現在登録されているセンサの情報を表示する。
+ ssmlogger :指定したセンサのデータを蓄積し、ファイルに保存する。
+ ssmmultiplayer :上記の複数センサ同時出力バージョン。

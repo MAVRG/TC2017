@@ -1,0 +1,21 @@
+<launch>
+    <arg name="camera_serial" default="16400757" />
+    <node pkg="nodelet" type="nodelet" name="camera_nodelet_manager" args="manager" />
+
+    <node pkg="nodelet" type="nodelet" name="camera_nodelet"
+          args="load pointgrey_camera_driver/PointGreyCameraNodelet camera_nodelet_manager" >
+      <param name="serial" value="$(arg camera_serial)" />
+      <param name="format7_roi_width" value="1920" />
+      <param name="format7_roi_height" value="720" />
+      <param name="format7_x_offset" value="0" />
+      <param name="format7_y_offset" value="720" />
+      <param name="frame_rate" value="10" />
+      
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="image_proc_debayer"
+          args="load image_proc/debayer camera_nodelet_manager">
+    </node>
+
+  　<node pkg = "auto_sh_spur" name="auto_sh_spur" type="auto_sh_spur"/>
+</launch>

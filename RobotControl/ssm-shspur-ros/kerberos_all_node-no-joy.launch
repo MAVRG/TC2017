@@ -1,0 +1,31 @@
+<launch>
+    <arg name="camera_serial" default="16400757" />
+    <node pkg="nodelet" type="nodelet" name="camera_nodelet_manager" args="manager" />
+
+    <node pkg="nodelet" type="nodelet" name="camera_nodelet"
+          args="load pointgrey_camera_driver/PointGreyCameraNodelet camera_nodelet_manager" >
+      <param name="serial" value="$(arg camera_serial)" />
+      <param name="format7_roi_width" value="1920" />
+      <param name="format7_roi_height" value="1440" />
+      <param name="format7_x_offset" value="0" />
+      <param name="format7_y_offset" value="0" />
+      <param name="frame_rate" value="10" />
+      
+    </node>
+    
+    <node pkg="nodelet" type="nodelet" name="image_proc_debayer"
+          args="load image_proc/debayer camera_nodelet_manager">
+    </node>
+
+  <!--
+  <group ns = "joy">
+      <node pkg = "joy" name="joy" type="joy_node"/>
+         <param value="/dev/input/js0" name="joy/joy/dev"/>
+      <node pkg = "joyteleop" name="joyteleop" type="joyteleop"/>
+  </group>
+  -->
+
+  <node pkg = "ssmodm2ros" name="ssmodm2ros" type="ssmodm2ros"/>
+  <node pkg = "auto_sh_spur" name="auto_sh_spur" type="auto_sh_spur"/>
+
+</launch>

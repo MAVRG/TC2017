@@ -1,0 +1,149 @@
+/*
+  libSSMlog.c - SSM access APIs 02/12/13  Eijiro Takeuchi
+ */
+
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <ctype.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/msg.h>
+#include <sys/time.h>
+#include <time.h>
+#include <ssmlog.h>
+#include <ssm_common.h>
+
+typedef struct{
+  char name[1000];
+  char logname[1000];
+  FILE *log_file;
+  int suid;
+  int size;
+  int property_size;
+  int log_num;
+  int status;
+  int count;
+  int num;
+  int tnum;
+  int total;
+  double cycle;
+  char *buf;
+  char *prop_buf;
+  double time;
+  int tid;
+  SSM_sid sid;
+}SSM_log;
+
+static SSM_log sensors[MAX_LOG_NUM];
+static int log_num;
+static double cur_time;
+
+void initSSMlog(){
+  initSSM();
+}
+
+/*----------------------Open sensor data on SSM-----------------*/
+SSM_sid openSSMlog(char *name, int *id)
+{
+int dummy;
+
+ if(log_num >= MAX_LOG_NUM)return (SSM_sid)-1;
+
+  if(!(sensors[log_num].log_file = fopen(name,"r")) )return 0;
+  fscanf(sensors[log_num].log_file,"%s %d %d %d %lf %lf %d",
+	 sensors[log_num].name, &sensors[log_num].suid, &sensors[log_num].size,
+	 &sensors[log_num].num, &sensors[log_num].cycle,&sensors[log_num].time,
+	 &sensors[log_num].property_size);
+    
+  fread(&dummy, 1, 1, sensors[log_num].log_file);
+
+  /*get memory space for buffer*/
+  if(!(sensors[log_num].buf = malloc(sensors[log_num].size))){
+    fprintf(stderr,"malloc error.\n");
+    return 0;
+  }
+  
+  sensors[log_num].sid = createSSM_time(sensors[log_num].name,
+				  sensors[log_num].suid, 
+				  sensors[log_num].size, 
+				  sensors[log_num].num*sensors[log_num].cycle ,
+				  sensors[log_num].cycle);
+  if(sensors[log_num].sid == 0){
+    printf("Such sensor is not registerd.\n");
+    return 0;
+  }
+  if(cur_time==0){
+    cur_time = sensors[log_num].time;
+  }
+
+  if(!(sensors[log_num].prop_buf = malloc(sensors[log_num].property_size))){
+    fprintf(stderr,"property malloc error.\n");
+    return 0;
+  }
+
+  if(sensors[log_num].property_size > 0){
+      fread(sensors[log_num].prop_buf, sensors[log_num].property_size, 1,
+	    sensors[log_num].log_file);
+      set_propertySSM(sensors[log_num].name, sensors[log_num].suid,
+		      sensors[log_num].prop_buf,sensors[log_num].property_size);
+  }
+  sensors[log_num].tid = 1;
+
+  *id = log_num;
+
+  log_num++;
+
+  return sensors[log_num-1].sid;
+}
+
+
+
+/*--------------Shared memory controll functions------------*/
+
+/*----------------------get shared memory address -----------------*/
+/*------------------ read sensor data -----------------*/
+int proceedSSMlog(int i)
+{
+  if(sensors[i].status == END_OF_FILE)return -1;
+
+  if(fread(&sensors[i].time, sizeof(double), 1, sensors[i].log_file)<1){
+    sensors[i].status = END_OF_FILE;
+  } 
+  if(fread(sensors[i].buf,  sensors[i].size, 1, sensors[i].log_file) <1){
+    sensors[i].status = END_OF_FILE;
+  }
+
+  return 
+    writeSSM_time(sensors[i].sid,sensors[i].buf,sensors[i].time);
+ 
+}
+
+int proceedSSMlog_time(double time)
+{
+  int i,total;
+
+  cur_time += time;
+  total = 0;
+
+  for(i = 0; i < log_num; i++){
+    while(sensors[i].time < cur_time){
+      if(sensors[i].status == END_OF_FILE)break;    
+      
+      if(fread(&sensors[i].time, sizeof(double), 1, sensors[i].log_file)<1){
+	sensors[i].status = END_OF_FILE;
+      } 
+      if(fread(sensors[i].buf,  sensors[i].size, 1, sensors[i].log_file) <1){
+	sensors[i].status = END_OF_FILE;
+      }
+      
+      writeSSM_time(sensors[i].sid,sensors[i].buf,sensors[i].time);
+      total++;
+    }
+  }
+  return total;
+}
+

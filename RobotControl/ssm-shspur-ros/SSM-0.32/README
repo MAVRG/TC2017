@@ -1,0 +1,36 @@
+Sensor Sharing Manager ver.0.31
+                Eijiro TAKEUCHI 2008/6/4
+
+Sensor Sharing Manager (SSM) is streaming sensor data management program.
+
+
+:Directory structrure
+SSM04
+-Makefile   make file
+-README     This file
+-bin        executable files
+ - ssm       Sensor Sharing Manager 
+ - lsssm     shows registerd sensor list
+ - ssmlogger logging sensor data
+ - ssmplayer playing sensor data log
+ - ssmmultiplayer playing multiple sensor data log
+-src        sources 
+ - ssm       source files of ssm 
+ - libSSM    library sources
+-include    include files
+-utilities  lssm,ssmlogger,ssmmultiplayer
+-lib        libraries
+
+
+:install
+make clean
+make
+make install
+
+
+:executable files
+ - ssm       Sensor Sharing Manager 
+ - lsssm     shows registerd sensor list
+ - ssmlogger logging sensor data
+ - ssmmultiplayer playing multiple sensor data log
+ 

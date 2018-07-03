@@ -1,0 +1,6 @@
+<launch>
+    <arg name="destination" default="/media/alexandr/AlexLogs/tc" />
+  
+    <node pkg="rosbag" type="record" name="recorder" 
+         args="record /scan /points_raw /velodyne_nodelet_manager/bond /velodyne_packets /twist_cmd /image_raw /joy/cmd_vel /tf /tf_static /dvs/events /dvs/imu /dvs/image_raw /dvs/camera_info -o $(arg destination)"/>
+</launch>
