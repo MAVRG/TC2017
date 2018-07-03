@@ -1,0 +1,504 @@
+/*
+ * ssm_manager.c - ’¶¦’Í­’¥á’¥â’¥ê’¡¦’´É’Íý’¥×’¥í’¥°’¥é’¥à
+ *
+ */
+
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <ctype.h>
+#include <unistd.h>
+#include <string.h>
+#include <signal.h>
+#include <sys/msg.h>
+#include "ssm_common.h"
+#include "ssm.h"
+
+int       msq_id=-1;   /*’¥á’¥Ã’¥»’¡¼’¥¸’¥­’¥å’¡¼’¤ÎID*/
+key_t     shm_key_num = 0;/*’¶¦’Í­’¥á’¥â’¥ê’¤Î’¿ô*/
+SSM_List* ssm_top = 0;
+pid_t     my_pid;      /*’¼«’Ê¬’¤Î’¥×’¥í’¥»’¥¹ID*/
+int       verbosity_mode = 0;/*’¥á’¥Ã’¥»’¡¼’¥¸’É½’¼¨*/
+
+int shmid_ssm_common_data;
+SSM_common_data *shm_ssm_common_data;
+
+void escape_road(void);
+struct sigaction sa_sigint;
+static void emergency(int);
+static void emergency(int sig){
+  fprintf(stderr,"program stop [%d]\n",sig);  
+  fprintf(stderr,"finalize...\n");  
+  
+  /*’½ª’Î»’½è’Íý*/
+  free_ssm_list(ssm_top);
+  ssm_top = 0;
+  fprintf(stderr,"- all allocated shared memory released\n");  
+  shmdt((char*)shm_ssm_common_data);/*’¥Ç’¥¿’¥Ã’¥Á*/
+  shmctl(shmid_ssm_common_data, IPC_RMID, 0);/*’ºï’½ü*/
+  while(1){
+    fprintf(stderr,"please hit ctrl+c\n");
+    sleep(1);
+  };
+}
+
+void escape_road(void){
+ sa_sigint.sa_handler = emergency;
+ sa_sigint.sa_flags = SA_RESETHAND|SA_NODEFER;
+ sa_sigint.sa_restorer = 0;
+
+ if (sigaction(SIGINT, &sa_sigint, NULL) < 0) {
+   perror("sigaction");
+   exit(1);
+ }
+}
+
+
+void print_list(SSM_List* p)
+{
+  while(p){
+    printf("name : %s\n",p->name);
+    printf("ID: %d  offset: %d  size: %d  address: %ld \n   |\n",p->shm_id,p->shm_offset,p->size,(long)p->shm_ptr);
+    p=p->next;
+  }
+}
+
+/*’°¸’Àè’ºî’À®*/
+long get_receive_id(void){
+  static long id;
+  if(id < MSQ_RES)id = MSQ_RES;
+  
+  id++;
+  if(id > MSQ_RES_MAX)id = MSQ_RES;
+  return id;
+}
+
+/*SSM’¤Î’¶¦’ÄÌ’¥Ç’¡¼’¥¿*/
+int alloc_ssm_common_data(void){
+ /*’¶¦’Í­’¥á’¥â’¥ê’ÎÎ’°è’¤ò’¤²’¤È*/
+  if((shmid_ssm_common_data =
+      shmget(SHM_KEY, sizeof(SSM_common_data), IPC_CREAT | 0666)) < 0)
+    return 0;
+  shm_key_num++;
+
+  /*’¤¢’¤¿’¤Ã’¤Á*/
+  if((shm_ssm_common_data = 
+      (SSM_common_data*)shmat(shmid_ssm_common_data, 0, 0)) < 
+     (SSM_common_data *)0) {
+    return 0;
+  }
+
+  settimeSSM(0,0);
+
+  return 1;
+}
+
+/*’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º ssize,’Íú’Îò’¿ôhsize’¤Î’¶¦’Í­’¥á’¥â’¥ê’¤Î’ÎÎ’°è’¤ò’ÆÀ’¤ë*/
+/*’¸½’ºß’¤Ï’Ã±’¤Ë’Í×’µá’Ëè’¤Ë’¶¦’Í­’¥á’¥â’¥ê’ÎÎ’°è’¤ò’³Î’ÊÝ’¤¹’¤ë’¤Î’¤ß        */
+/*’¾­’Íè’Åª’¤Ë’¤Ï’¥á’¥â’¥ê’´É’Íý’¤È’»÷’¤¿’¤è’¤¦’¤Ê’µ¡’¹½’¤ò’Æþ’¤ì’¤ë’¡©        */
+int alloc_ssm_block(int ssize, int hsize,YTime cycle, char **shm_h, int *offset)
+{
+  int s_id,i; /*  */
+
+  /*’¶¦’Í­’¥á’¥â’¥ê’ÎÎ’°è’¤ò’¤²’¤È*/
+  if((s_id = shmget(SHM_KEY+shm_key_num,
+		    sizeof(ssm_header)+(ssize+sizeof(YTime)+sizeof(int))*hsize,
+		    IPC_CREAT | 0666)) < 0)return 0;
+  shm_key_num++;
+
+  /*’¤¢’¤¿’¤Ã’¤Á*/
+  if((*shm_h = shmat(s_id, 0, 0)) < (char *)0) {
+    return 0;
+  }
+
+  /*’£°’¤Ç’½é’´ü’²½’¡©*/
+  for(i = 0; i < (int)(sizeof(ssm_header)+(ssize+sizeof(YTime)+sizeof(int))*hsize); i++)
+    (*shm_h)[i] = 0;
+
+  /*’¸½’¾õ’¤Ç’¤Ï’¿·’¤¿’¤Ë’ÆÀ’¤¿’ÎÎ’°è’¤Ê’¤Î’¤Ç’¡¢offset’¤Ï’£°*/
+  *offset = 0;
+  if(cycle <= 0)cycle = 1;
+
+  /*ssm_header ’½é’´ü’²½*/
+  ((ssm_header*)*shm_h)->tid_top = SSM_TID_SP-1;  /*’½é’´ü’°Ì’ÃÖ*/ 
+  ((ssm_header*)*shm_h)->size = ssize;            /*’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º*/
+  ((ssm_header*)*shm_h)->num = hsize;             /*’Íú’Îò’¿ô*/
+  ((ssm_header*)*shm_h)->table_size = hsize;      /*’¥Æ’¡¼’¥Ö’¥ë’¥µ’¥¤’¥º*/
+  ((ssm_header*)*shm_h)->cycle = cycle;           /*’¥Ç’¡¼’¥¿’ºÇ’¾®’¥µ’¥¤’¥¯’¥ë*/
+  ((ssm_header*)*shm_h)->data_off = sizeof(ssm_header);  /*’¥Ç’¡¼’¥¿’¤Î’Àè’Æ¬’¥¢’¥É’¥ì’¥¹*/
+  ((ssm_header*)*shm_h)->times_off = sizeof(ssm_header) + ssize*hsize;/*’»þ’¹ï’¤Î’Àè’Æ¬’¥¢’¥É’¥ì’¥¹*/
+  ((ssm_header*)*shm_h)->table_off =sizeof(ssm_header) + (ssize+sizeof(YTime))*hsize;/*time table’¤Î’Àè’Æ¬’¥¢’¥É’¥ì’¥¹*/
+
+  return s_id;
+}
+
+
+/*’´É’Íý’ÍÑ’¥ê’¥¹’¥È’¤ò’ºÇ’¸å’Èø’¤Ë’ºî’¤ë*/
+SSM_List* add_ssm_list(char *name,
+		   int suid,
+		   int ssize,
+		   int hsize,
+		   YTime cycle)
+{
+  SSM_List *p,*q;
+ 
+  p = (SSM_List*)malloc(sizeof(SSM_List));
+  if(!p)return 0;
+  strcpy(p->name,name);
+  p->suid = suid;
+  p->shm_id = alloc_ssm_block(ssize,hsize,cycle,&(p->shm_ptr),&(p->shm_offset));
+  p->size =sizeof(ssm_header)+(ssize+sizeof(YTime)+sizeof(int))*hsize;
+  p->header = (ssm_header*)(p->shm_ptr);
+  p->next = 0;
+  p->property = 0;
+  p->property_size = 0;
+  /*’¥ê’¥¹’¥È’¤Î’ºÇ’¸å’¤Ëp’¤ò’ÄÉ’²Ã*/
+  if(!ssm_top){
+    ssm_top = p;
+  }else{
+    q = ssm_top;
+    while(q->next){
+      q = q->next;
+    }
+    q->next = p;
+  }
+  return p;
+}
+
+void free_ssm_list(SSM_List* ssmp){
+  if(ssmp){
+    if(ssmp->next)free_ssm_list(ssmp->next);
+    if(ssmp->shm_ptr){
+      shmdt(ssmp->shm_ptr);/*’¥Ç’¥¿’¥Ã’¥Á*/
+      shmctl(ssmp->shm_id, IPC_RMID, 0);/*’ºï’½ü*/
+      printf("%s detached\n",ssmp->name);
+    }/*
+      ssmp->next = 0;
+      
+      if(ssmp->header)free(ssmp->header);
+      if(ssmp->property)free(ssmp->property);
+      free(ssmp);
+    */
+  }
+}
+
+
+
+/*SSM’¤Î’½é’´ü’²½*/
+int ssm_init(void)
+{
+  /*’¥á’¥Ã’¥»’¡¼’¥¸’¥­’¥å’¡¼’¤Î’¥ª’¡¼’¥×’¥ó*/
+  if((msq_id = msgget(MSQ_KEY, IPC_CREAT | 0666)) < 0) {
+    return -1;
+  }
+  
+  my_pid = getpid();
+  ssm_top = 0;
+  
+  //’¶¦’ÄÌ’¶¦’Í­’¾ð’Êó’¤Î’¾ì’½ê’¤ò’³Î’ÊÝ
+  alloc_ssm_common_data();  
+
+  printf("Message queue ready.\n");
+  printf("Msg queue ID = %d \n",msq_id);
+  //  printf("PID = %d\n",my_pid);
+  return 1;
+}
+
+
+/*’Ì¾’Á°’¤«’¡¢’¸Ç’Í­ID’¤«’¤é’¥»’¥ó’¥µ’¤ò’¸¡’º÷’¤¹’¤ë*/
+/*’Ì¾’Á°’Í¥’Àè’¤Ç’¡¢’Æ±’¤¸’Ì¾’Á°’¤Î’Êª’¤¬’¤¢’¤ì’¤Ð’¸Ç’Í­ID’¤«’¤é’È½’ÃÇ*/
+
+SSM_List* search_SSM_List(char* name,int suid)
+{
+  SSM_List *p,*pn,*pni,*pi;
+
+  p = ssm_top;
+
+  pn = 0;pni = 0;pi = 0;
+  while(p){
+    if(strcmp(p->name,name) == 0){
+      /*’Ì¾’Á°’¤¬’Æ±’¤¸*/
+      pn = p;
+      if(p->suid == suid){
+	/*’Ì¾’Á°’¤â’Æ±’¤¸*/
+	pni = p;
+      }
+    }
+    if(p->suid == suid){
+      /*suid ’¤¬’Æ±’¤¸*/
+      pi = p;
+      //break;
+    }
+    p = p->next;
+  }
+
+  if(pni)return pni;/*’Ì¾’Á°’¤ÈID’¤¬’°ì’Ã×*/
+  //if(pn)return pn;  /*’Ì¾’Á°’¤¬’°ì’Ã×*/
+  //if(pi)return pi;  /*ID’¤¬’°ì’Ã×*/
+  return 0;
+}
+
+/*’¥»’¥ó’¥µ’¥ê’¥¹’¥È’¤Ë’ÅÐ’Ï¿’¤µ’¤ì’¤Æ’¤¤’¤ë’¿ô’¤ò’¼è’ÆÀ’¤¹’¤ë*/
+int get_num_SSM_List(void)
+{
+  SSM_List* p;
+  int num;
+
+  p = ssm_top;
+  num = 0;  
+  while(p){
+    num++;
+    p = p->next;
+  }
+
+  return num;
+}
+
+/*’¥»’¥ó’¥µ’¥ê’¥¹’¥È’¤«’¤én’ÈÖ’¤á’¤Î’¥»’¥ó’¥µ’¤Î’¥¢’¥É’¥ì’¥¹’¤ò’¼è’ÆÀ’¤¹’¤ë*/
+SSM_List* get_nth_SSM_List(int n)
+{
+  SSM_List* p;
+  p = ssm_top;
+  
+  while(p){
+    n--;
+    if(n < 0)return p;
+    p = p->next;
+  }
+
+  p = 0;
+  return p;
+}
+
+
+/*’¥á’¥Ã’¥»’¡¼’¥¸’¤Î’¤ä’¤ê’¤È’¤ê*/
+int msq_loop(void)
+{
+  ssm_msg msg;
+  SSM_List *slist;
+  int len,num;
+  
+  while(1){
+    /*’¼õ’¿®’¡Ê’ÂÔ’¤Á’¡Ë*/
+    if(verbosity_mode)printf("msg_ready\n");
+    len = msgrcv(msq_id,&msg,SSM_MSG_SIZE,MSQ_CMD,0);
+    if(len < 0)return 0;
+     if(verbosity_mode)printf("msg_get\n");
+    /*’¤½’¤ì’¤¾’¤ì’¤Î’¥³’¥Þ’¥ó’¥É’¤Ø’¤Î’±þ’Åú*/
+    switch((msg.cmd_type)&0x1f){
+    case MCinit:
+      msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+      msg.cmd_type = MCres;
+      msg.suid  = shmid_ssm_common_data;
+      msg.ssize = 0;
+      /*’Á÷’¿®*/
+      if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+      
+       if(verbosity_mode)printf("init");
+      break;
+    case MCcreate:/*’¥»’¥ó’¥µ’¤Î’¥á’¥â’¥ê’³Î’ÊÝ*/
+       if(verbosity_mode)printf("message:create!\n");
+
+      /*’¥ê’¥¹’¥È’¤Î’¸¡’º÷*/
+      slist = search_SSM_List(msg.name, msg.suid);
+
+      /*’Æ±’¤¸’Êª’¤¬’Ìµ’¤«’¤Ã’¤¿’¤é*/
+      if(!slist){   if(verbosity_mode)printf("   |   :add\n");
+	/*’¥ê’¥¹’¥È’¤Ë’ÄÉ’²Ã*/
+	slist=add_ssm_list(msg.name, msg.suid, msg.ssize, msg.hsize, msg.time);
+      }else{
+	 if(verbosity_mode)printf("   |   :exist\n");
+      }
+      msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+      msg.cmd_type = MCres;
+      msg.suid  = slist->shm_id;
+      msg.ssize = slist->shm_offset;
+      /*’Á÷’¿®*/
+      if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+      
+       if(verbosity_mode)print_list(ssm_top);
+       if(verbosity_mode)printf("   |   :received shm_id%d offset%d\n",msg.suid,msg.ssize);
+      break;
+
+    case MCopen:/*’¥»’¥ó’¥µ’¤Î’¥ª’¡¼’¥×’¥ó*/
+       if(verbosity_mode)printf("message:open!\n");
+      slist = search_SSM_List(msg.name,msg.suid);
+      if(slist){ if(verbosity_mode)printf("   |   :exist\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.suid = slist->shm_id;
+	msg.ssize = slist->shm_offset;
+      }else{ if(verbosity_mode)printf("   |   :not found\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.suid = -1;
+	msg.ssize = 0;
+      }
+       /*’Á÷’¿®*/
+      if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+       if(verbosity_mode)printf("   |   :received shm_id%d offset%d\n",msg.suid,msg.ssize);
+      break;
+      
+    case MCclose:
+      break;
+      
+    case MCgettid:
+      break;
+
+    case MCsensor_list_num:
+      /*’¥»’¥ó’¥µ’¤Î’¥ê’¥¹’¥È’¤Ë’ÅÐ’Ï¿’¤µ’¤ì’¤Æ’¤¤’¤ë’¿ô’¤ò’¼è’ÆÀ’¤¹’¤ë*/
+      num = get_num_SSM_List();
+      msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+      msg.cmd_type = MCres;
+      msg.suid = num;
+
+      /*’Á÷’¿®*/
+      if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+       if(verbosity_mode)printf("   |   :sensor num %d\n",msg.suid);
+      break;
+
+    case MCsensor_list_name:
+      /*’¥»’¥ó’¥µ’¥ê’¥¹’¥È’¤«’¤én’ÈÖ’¤á’¤Î’¤â’¤Î’¤Î’¾ð’Êó’¤ò’¼è’ÆÀ’¤¹’¤ë*/
+      num = msg.suid;
+      slist = get_nth_SSM_List(num);
+      if(slist){ if(verbosity_mode)printf("   |   :exist\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.suid     = slist->suid;/*ID*/ 
+	msg.ssize    = slist->header->size;/*’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º*/
+	//msg.hsize    = slist->table_size;/*’µ­’²±’¿ô*/
+	//msg.time     = slist->cycle;/*’Ê¿’¶Ñ’¼þ’´ü*/
+	strcpy(msg.name, slist->name);/*’Ì¾’Á°*/
+      }else{ if(verbosity_mode)printf("   |   :not found\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.suid = -1;
+	msg.ssize = -1;
+      }
+      /*’Á÷’¿®*/
+      if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+       if(verbosity_mode)printf("   |   :received num%d = %s[%d]\n",num,msg.name,msg.suid);
+      break;
+
+    case MCsensor_list_info:
+      /*’Ì¾’Á°’¤Ç’»Ø’Äê’¤·’¤¿’¥»’¥ó’¥µ’¤Î’¾ð’Êó’¤ò’¼è’ÆÀ’¤¹’¤ë*/
+      if(verbosity_mode)printf("message:read_setting!\n");
+
+      slist = search_SSM_List(msg.name, msg.suid);
+      if(slist){ if(verbosity_mode)printf("   |   :exist\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.ssize    = slist->header->size; /*’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º*/
+	msg.suid     = slist->property_size; /*property size*/
+	msg.time     = slist->header->cycle;/*’Ê¿’¶Ñ’¼þ’´ü*/
+	msg.hsize    = slist->header->num;  /*’Íú’Îò’¿ô*/
+      }else{ if(verbosity_mode)printf("   |   :not found\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.suid  = -1;
+	msg.ssize = -1;
+      }
+       /*’Á÷’¿®*/
+      if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+       if(verbosity_mode)printf("   |   :received \n");
+      break;
+
+    case MCsensor_property_set:
+      if(verbosity_mode)printf("message:property_set\n");
+
+      slist = search_SSM_List(msg.name, msg.suid);
+      if(slist){
+	if(verbosity_mode)printf("   |   :exist\n");
+	if(!slist->property){/*’¾ì’½ê’¤¬’¤Ê’¤±’¤ì’¤Ð’ºî’¤ë*/
+	  slist->property = malloc(msg.ssize+sizeof(long));
+	  slist->property_size = msg.ssize;
+	}
+	if(slist->property){/*’¾ì’½ê’¤¬’¤È’¤ì’¤Æ’¤ì’¤Ð’½ñ’¤­’¹þ’¤à*/ 
+	  /*’¼õ’¿®’½à’È÷OK’¤Î’ÊÖ’¿®*/
+	  msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	  msg.res_type = get_receive_id();/*’°¸’Àè’¤Ï’¤³’¤Á’¤é*/
+	  msg.cmd_type = MCres;
+	  msg.ssize    = slist->property_size; /*’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º*/
+	  if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+	  /*’¥Ç’¡¼’¥¿’¤ò’ÆÉ’¤ß’¹þ’¤à*/
+	  msgrcv(msq_id, (char*)slist->property,
+		 slist->property_size, msg.res_type, 0);
+	}else{
+	  if(verbosity_mode)printf("   |   :mem error\n");
+	  msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	  msg.cmd_type = MCres;
+	  msg.ssize    = 0;
+	  if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;	
+	}
+      }else{
+	if(verbosity_mode)printf("   |   :not found\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.ssize = 0;
+	if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;	  
+      }
+      break;
+
+    case MCsensor_property_get:
+      if(verbosity_mode)printf("message:propeerty_get\n");
+
+      slist = search_SSM_List(msg.name, msg.suid);
+      if(slist){
+	if(verbosity_mode)printf("   |   :exist\n");
+	if(slist->property && slist->property_size){/*’¾ì’½ê’¤¬’¤È’¤ì’¤Æ’¤ì’¤Ð’½ñ’¤­’¹þ’¤à*/ 
+	  /*’¼õ’¿®’½à’È÷OK’¤Î’ÊÖ’¿®*/
+	  msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	  msg.cmd_type = MCres;
+	  msg.ssize    = slist->property_size; /*’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º*/
+	  if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;
+	  
+	  /*’¥Ç’¡¼’¥¿’¤ò’Á÷’¤ë*/
+	  *((long*)slist->property) = msg.res_type;/*’ÊÖ’¿®*/
+	  msgsnd(msq_id, (char*)slist->property,
+		 slist->property_size, 0);
+	}else{
+	  if(verbosity_mode)printf("   |   :mem error\n");
+	  msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	  msg.cmd_type = MCres;
+	  msg.ssize    = 0;
+	  if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;	
+	}
+      }else{
+	if(verbosity_mode)printf("   |   :not found\n");
+	msg.msg_type = msg.res_type;/*’ÊÖ’¿®*/
+	msg.cmd_type = MCres;
+	msg.ssize = 0;
+	if((msgsnd(msq_id, &msg, SSM_MSG_SIZE, 0)) < 0)return 0;	  
+      }
+      break;
+    default:
+      break;
+    }
+  }
+
+  return 1;
+}
+
+
+int main(int argc,char* argv[])
+{
+  printf("\n");
+  printf(" --------------------------------------------\n");
+  printf(" SSM(Sensor Sharing Manager).  \n");
+  printf(" Ver. 0.31 \n");
+  printf(" ------------------------------------------- \n\n");
+  
+  /*’Èò’Æñ’¸ý’¤Î’ÍÑ’°Õ*/
+  escape_road();
+  
+  ssm_top = 0;
+   
+  ssm_init();
+  msq_loop();
+  
+  return 0;
+}
+

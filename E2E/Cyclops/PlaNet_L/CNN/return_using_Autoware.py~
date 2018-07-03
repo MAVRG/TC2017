@@ -1,0 +1,73 @@
+import rospy
+import numpy as np
+from geometry_msgs.msg import Twist
+from geometry_msgs.msg import TwistStamped
+from std_msgs.msg      import Float64
+from std_msgs.msg      import Int64
+
+
+class return_using_Autoware():
+    def __init__(self):
+	self.sub_CNN_flag=0
+	self.sub_twist_flag=0
+	self.sub_distance_flag=0
+	self.distance_flame = 0
+        self._sub = rospy.Subscriber('/joy/CNN/cmd_vel', Twist, self.callback_CNN)
+        self._sub1 = rospy.Subscriber('/twist_cmd', TwistStamped, self.callback_twist)
+        self._sub2 = rospy.Subscriber('/cyclops_distance_to_next_waypoint', Float64, self.callback_distance)
+
+        self._pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
+        self._pub1 = rospy.Publisher('/distance_flame', Int64, queue_size=1)
+
+    def callback(self):
+
+       if(self.sub_CNN_flag==1 and self.sub_twist_flag==1 and self.sub_distance_flag==1):
+
+            self.sub_CNN_flag=0
+            self.sub_twist_flag=0
+            self.sub_distance_flag=0
+
+            twist = Twist()
+
+            if(self.distance_flame == 0 ):
+               stre = self.twist_msg0.twist.angular.z 
+            else:
+               stre = self.CNN_msg0.angular.z 
+               self.distance_flame = self.distance_flame-1
+            
+
+            ac = self.twist_msg0.twist.linear.x
+            twist.linear.x = ac
+            twist.angular.z = stre
+            self._pub.publish(twist)
+            self._pub1.publish(self.distance_flame)
+
+	    print stre
+
+
+    def callback_CNN(self,CNN_msg):
+	    self.sub_CNN_flag=1
+	    self.CNN_msg0 = CNN_msg
+	    self.callback()
+
+    def callback_twist(self,twist_msg):
+	    self.sub_twist_flag=1
+	    self.twist_msg0 = twist_msg
+	    self.callback()
+
+    def callback_distance(self,distance_msg):
+	    self.sub_distance_flag=1
+	    self.distance_msg0 = distance_msg
+            if(self.distance_msg0.data > 1.0):
+               self.distance_flame = 100
+	    self.callback()
+
+    def main(self):
+        rospy.spin()
+
+if __name__ == '__main__':
+    rospy.init_node('return_using_Autoware')
+    tensor = return_using_Autoware()
+    tensor.main()
+
+

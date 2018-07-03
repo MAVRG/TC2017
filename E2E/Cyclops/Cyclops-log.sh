@@ -8,7 +8,7 @@ else
 destination=$1;
 fi
 
-source ~/ssm-shspur-ros/catkin_ws/devel/setup.bash
+source ~/TC2017/RobotControl/ssm-shspur-ros/catkin_ws/devel/setup.bash
 
 killall ssm
 killall sh_spur
@@ -17,17 +17,16 @@ sleep 2
 ssm&
 sleep 2
 
-cd ~/ssm-shspur-ros/sh_spur-0.11/sh_spur/
+cd ~/TC2017/RobotControl/ssm-shspur-ros/sh_spur-0.11/sh_spur/
 sh_spur -p Chinouka_okugai_robo.param&
 sleep 2
 
-cd ~/seiya/Cyclops/PlaNet_L/CNN
+cd ~/TC2017/E2E/Cyclops/PlaNet_L/CNN
 python tensorflow_in_ros.py&
 
-cd ~/seiya/Cyclops
+cd ~/TC2017/E2E/Cyclops
 roslaunch cyclops_all_node.launch&
 
-#roslaunch rosbagCyclops.launch
 if [[ $LOG == 1 ]]; then
 roslaunch rosbag-dvs.launch destination:="$destination"
 fi

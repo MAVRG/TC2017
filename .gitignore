@@ -41,8 +41,7 @@ env/
 venv/
 ENV/
 
-# Autoware Resources
-*.pcd
-*.bag
-*.csv
-
+# Binaries
+*.a 
+*.o
+*.so

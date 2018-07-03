@@ -1,0 +1,44 @@
+ #include<ssm_common.h>
+#include<Sensor_A.h>
+#include<unistd.h>
+#include<stdio.h>
+
+SensorA sens_data;
+
+void receive_sensorA(SensorA *data, double *time){
+  static double a,b;
+  static int c;
+  a+=0.1;
+  b+=0.01;
+  c++;
+  data->a = a;
+  data->b = b;
+  data->c = c;
+  *time = gettimeSSM();
+  usleep(100000);
+}
+
+int main(int argc, char *argv[]){
+
+double measured_time;
+SSM_sid sensA_sid;
+SensorA_Property sens_prop;
+ 
+  initSSM();
+  //’Ì¾’Á°’¤òsensor_A’¤Ç’¡¢ID’¤ò0’¤Ç’¡¢0.1’ÉÃ’¤ª’¤­’¤Ë’Íè’¤ë’¥Ç’¡¼’¥¿’¤ò10’ÉÃ’´Ö’ÊÝ’»ý’¤¹’¤ë’¤è’¤¦’ÎÎ’°è’¤ò’³Î’ÊÝ’¡£ 
+  sensA_sid = createSSM("sensor_A", 0, sizeof(SensorA), 10, 0.1);
+
+  /*property’¤Î’Àß’Äê*/
+  sens_prop.a = 100;
+  sprintf(sens_prop.name, "sensorA");
+  set_propertySSM("sensor_A",0,&sens_prop,sizeof(SensorA_Property));
+
+  while(1){
+    usleep(100);
+    
+    //SensorA’¤Î’¥Ç’¡¼’¥¿’¤ò’²¿’¤«’¤·’¤é’¤Î’Êý’Ë¡’¡Ê’Îã’¤¨’¤Ð’¥·’¥ê’¥¢’¥ë’ÄÌ’¿®’¡Ë’¤Ç’¼è’ÆÀ’¤·’¡¢’´è’Ä¥’¤Ã’¤Æ’´Ñ’Â¬’»þ’¹ï’¤ò’¿ä’Äê’¤¹’¤ë’´Ø’¿ô’¡£
+    receive_sensorA(&sens_data, &measured_time);
+    //SSM’¤Ø’¤Î’¥Ç’¡¼’¥¿’¤Î’½ñ’¤­’¹þ’¤ß’¡£
+    printf("%d\n", writeSSM(sensA_sid, (char*)&sens_data, measured_time));
+  }
+}  

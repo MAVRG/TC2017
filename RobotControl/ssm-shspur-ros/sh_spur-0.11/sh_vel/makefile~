@@ -1,0 +1,21 @@
+BINDIR = bin
+SRCDIR = src
+DEVDIR = device
+TARGET = $(BINDIR)/SH_vel
+COFF = $(TARGET).coff
+SRCS = main.c serial.c  motor_device.c
+CC = sh-coff-gcc
+COPY = sh-coff-objcopy 
+FLAG1 = -O -m2 -T $(DEVDIR)/romsh7045.x -I./include/ -I../include/
+FLAG2 = -nostartfiles $(DEVDIR)/startup.s
+FLAG3 = -O srec 
+
+$(TARGET).mot : $(COFF)
+	$(COPY) $(FLAG3) $< $@
+
+$(COFF) : $(SRCS)
+	$(CC) -o $(COFF) $(FLAG1) $(SRCS) $(FLAG2)  -lc -lm
+
+
+clean:
+	rm *~ $(BINDIR)/*.coff $(BINDIR)/*~ include/*~

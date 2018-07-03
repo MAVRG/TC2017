@@ -1,0 +1,138 @@
+/*
+  ’¥»’¥ó’¥µ’¶¦’Í­’¥á’¥â’¥ê’´É’Íý’¶¦’ÄÌ’Àß’Äê
+  12/13 Eijiro TAKEUCHI
+  ’¡¦’¥é’¥¤’¥Ö’¥é’¥ê’ÍÑ’¥Ç’¥£’¥ì’¥¯’¥È’¥ê’¤Ë’°Ü’Æ°
+*/
+
+
+#ifndef __SSM_COMMON__
+#define __SSM_COMMON__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "ymbc_time.h"
+
+
+ 
+/ *---------------------------defines------------------------------------  */
+
+/*’¶¦’Í­’¥á’¥â’¥ê’¥¢’¥¯’¥»’¥¹’ÍÑ’¥­’¡¼*/
+#define SHM_KEY 0x3292
+/*’¥á’¥Ã’¥»’¡¼’¥¸’¥­’¥å’¡¼’¥¢’¥¯’¥»’¥¹’ÍÑ’¥­’¡¼*/
+#define MSQ_KEY 0x3292
+
+#define SHM_NUM 10
+
+
+/*MessageCommand type*/
+#define MSQ_CMD  1000
+#define MSQ_RES  1001
+#define MSQ_RES_MAX 2000
+#define MCinit   0
+#define MCcreate 1
+#define MCopen   2
+#define MCclose  3
+#define MCgettid 4
+#define MCsensor_list_info 5
+#define MCsensor_list_num 6
+#define MCsensor_list_name 7
+#define MCsensor_property_set 8
+#define MCsensor_property_get 9
+
+#define MCres 31
+
+#define MCread 0x20
+#define MCwrite 0x40
+#define MCexclusive 0x80
+
+#define SSM_SNAME_MAX 32   /*’¥»’¥ó’¥µ’Ì¾’¤Î’ºÇ’Âç’Ä¹’¤µ’¡Ê8n’¡Ë*/
+
+#define SSM_MARGIN 1       /*’¥Ç’¡¼’¥¿’¥¢’¥¯’¥»’¥¹’¥¿’¥¤’¥ß’¥ó’¥°’¤Î’Í¾’Íµ
+			     ’¡Ê’½ñ’¤­’¹þ’¤ß’Ãæ’¤Î’¥Ç’¡¼’¥¿’¤ò’ÆÉ’¤Þ’¤Ê’¤¤’¤è’¤¦’¤Ë’¤¹’¤ë’¤¿’¤á’¡Ë*/
+#define SSM_TID_SP 0       /*tid’¤Î’²¼’¸Â*/
+
+#define createSSM_time(n,u,s,l,c)    createSSM(n,u,s,l,c)
+/*---------------------------typedefs------------------------------------  */
+typedef struct{
+  int data;
+  int num;
+}shm_type;
+
+typedef struct{
+  char* data;
+  double time;
+  int id;
+}ssm_data;
+
+
+/*SSM’¤Î’¥Ø’¥Ã’¥À*/
+typedef struct{
+  int   tid_top;   //’ºÇ’¿·’¤ÎTID(rp = tid_top wp = tid_top+1 )
+  int   num;       //’Íú’Îò’¿ô
+  int   size;      //’¥Ç’¡¼’¥¿’¥µ’¥¤’¥º
+  int   table_size;//TID’¸¡’º÷’¥Æ’¡¼’¥Ö’¥ë’¤Î’¥µ’¥¤’¥º
+  double cycle;    //’¥Ç’¡¼’¥¿’¤Î’Æþ’ÎÏ’¤µ’¤ì’¤ë’¼þ’´ü’¡Ê’ºÇ’Äã’ÃÍ’¡Ë
+  int   data_off;  //’¥Ç’¡¼’¥¿’¤Þ’¤Ç’¤Î’¥ª’¥Õ’¥»’¥Ã’¥È
+  int   times_off; //’»þ’¹ï’¥Ç’¡¼’¥¿’¤Þ’¤Ç’¤Î’¥ª’¥Õ’¥»’¥Ã’¥È
+  int   table_off; //TID’¸¡’º÷’¥Æ’¡¼’¥Ö’¥ë’¤Þ’¤Ç’¤Î’¥ª’¥Õ’¥»’¥Ã’¥È
+}ssm_header;
+
+
+/*SSM’¥³’¥Þ’¥ó’¥É’¥á’¥Ã’¥»’¡¼’¥¸*/
+typedef struct{
+  long   msg_type;
+  long   res_type;/*’ÊÖ’¿®’ÍÑ*/
+  int    cmd_type;
+  char   name[SSM_SNAME_MAX];
+  int    suid;
+  int    ssize;
+  int    hsize;
+  YTime  time; 
+}ssm_msg;
+
+
+typedef struct{
+  double ssmtime_settime;
+  double ssmtime_offset;
+  double ssmtime_speed;
+}SSM_common_data;
+
+/*SID’¤Ï’¼Â’¤Ï’¤¿’¤À’¤Î’¥¢’¥É’¥ì’¥¹*/
+typedef char* SSM_sid;
+
+#define SSM_MSG_SIZE  (sizeof(ssm_msg) - sizeof(long) )
+//#define SSM_MSG_SIZE  (sizeof(ssm_msg))
+/*-------------------------global variables--------------------------------  */
+
+/*-------------------------function prototypes----------------------------  */
+void errSSM(void);
+void del_msg(void);
+int initSSM(void);
+SSM_sid createSSM(char *name,int sensor_uid,int ssm_size,YTime life,YTime cycle);
+
+SSM_sid openSSM(char *name,int sensor_uid,char open_mode);
+int getTID(SSM_sid sid,YTime ytime);
+int getTID_time(ssm_header *shm_p, YTime ytime );
+int setTID_time(ssm_header *shm_p, YTime ytime ,int tid);
+int readSSM(SSM_sid sid,char *data,YTime *ytime,int tid);
+int readSSM_time(SSM_sid sid, char *data, YTime ytime, YTime* ret_time);
+int writeSSM(SSM_sid sid,char *data,YTime ytime);
+int writeSSM_time(SSM_sid sid,char *data,YTime ytime);
+int damp(SSM_sid sid,int mode,int num);
+
+int getSSM_num(void);
+int getSSM_name(int n, char *name, int *suid, int *size);
+int getSSM_info(char *name, int suid, 
+		int *size, int *num, double *cycle, int *property_size);
+double gettimeSSM(void);
+double settimeSSM(double offset_time,double speed);
+int  set_propertySSM(char *name,int sensor_uid,char* data, int size);
+int  get_propertySSM(char *name,int sensor_uid,char* data);
+
+#ifdef __cplusplus
+  }
+#endif
+
+#endif
